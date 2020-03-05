@@ -21,6 +21,17 @@ public class Joueur {
         this.sac = new ListItems();
     }
 
+    public Joueur(String nom,String sexe, int district){
+        //A la création du joueur il a des stats de base et un district défini
+        this.nom = nom;
+        this.sexe = sexe;
+        this.vie = 50;
+        this.attaque = 5;
+        this.defence = 5;
+        this.district = district;
+        this.sac = new ListItems();
+    }
+
     public Joueur(String nom,String sexe, Integer vie, Integer attaque, Integer defence) {
         //Si on doit créer un joueur spécial
         this.nom = nom;
@@ -33,7 +44,6 @@ public class Joueur {
     }
 
     //Getter / Setter
-
     public Integer getVie() {
         return vie;
     }
@@ -58,8 +68,7 @@ public class Joueur {
     public void setSac(ListItems sac) {
         this.sac = sac;
     }
-
-    String getNom() {
+    public String getNom() {
         return nom;
     }
     public String getSexe() {

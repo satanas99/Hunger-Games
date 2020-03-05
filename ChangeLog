@@ -1,0 +1,3 @@
+### Affichage liste Joueurs ### 05/03/2020 ###
+
+- Modification de la classe setDistrict pour qu'il n'y ai pas la boucle infini

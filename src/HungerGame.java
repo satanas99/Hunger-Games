@@ -20,9 +20,6 @@ public class HungerGame {
 
 
 
-
-
-
     }
 
     private static void afficheListeJoueurs() {
@@ -33,9 +30,9 @@ public class HungerGame {
         //Et initilise les districts aléatoirement
         //Retourne la liste des joueurs
         int choix = 0;
-        int nbPersonnesDistrict = 0;
+        int nbPersonnesParDistrict = 0;
         ListJoueur listJoueurs = new ListJoueur();
-        while (choix < 1 || choix > 4) {
+        while (choix < 1 || choix > 5) {
             System.out.println("------ HUNGER GAMES ------");
             System.out.println("Choix du nombre de joueurs :\n ");
             String[] menu = {"24 Tributs", "36 Tributs", "48 Tributs"};
@@ -43,22 +40,24 @@ public class HungerGame {
             choix = saisirInt("Votre choix");
 
             if (choix == 1) {
-                nbPersonnesDistrict = 24/12;
+                nbPersonnesParDistrict = 24/12;
                 listJoueurs = demandeJoueurs(24);
             } else if (choix == 2) {
-                nbPersonnesDistrict = 36/12;
+                nbPersonnesParDistrict = 36/12;
                 listJoueurs = demandeJoueurs(36);
             } else if (choix == 3) {
-                nbPersonnesDistrict = 48/12;
+                nbPersonnesParDistrict = 48/12;
                 listJoueurs = demandeJoueurs(48);
             } else if (choix == 4) {
-                nbPersonnesDistrict = 2;
+                nbPersonnesParDistrict = 2;
                 listJoueurs = demandeJoueurs(4);
-            } else {
+            } else if (choix == 5) {
+                System.out.println("Vide");
+            }else {
                 System.out.println("Erreur de saisie");
             }
         }
-        listJoueurs = setDistrict(nbPersonnesDistrict, listJoueurs);
+        listJoueurs = setDistrict(nbPersonnesParDistrict, listJoueurs);
         return listJoueurs;
     }
 
@@ -66,12 +65,12 @@ public class HungerGame {
         ListJoueur res = new ListJoueur();
         listJoueurs.shuffle();
         int district = 1;
-
         while (listJoueurs.size()>0){
             for (int i = 0; i<nbPersonnesDistrict;i++){
-                res.addJoueur(listJoueurs.getJoueur(i));
-                Joueur j1 = res.getJoueur(i);
-                res.getJoueur(i).addDistrict(district);
+                res.addJoueur(listJoueurs.getLastJoueur());
+                Joueur j1 = res.getLastJoueur();
+                res.getLastJoueur().addDistrict(district);
+                listJoueurs.supprLastJoueur();
             }
             district += 1;
         }
@@ -88,6 +87,7 @@ public class HungerGame {
                 sexe = saisirStr("Sexe du joueur (M / F)").toUpperCase();
             }
             listJoueurs.addJoueur(new Joueur(nom, sexe));
+            //System.out.println("Nom : " + listJoueurs.getJoueur(i).getNom() + "  Sexe : " + listJoueurs.getJoueur(i).getSexe() + "  District : " + listJoueurs.getJoueur(i).getDistrict());
         }
         return listJoueurs;
     }
