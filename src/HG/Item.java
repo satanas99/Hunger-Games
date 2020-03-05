@@ -1,4 +1,4 @@
-package Fonctions;
+package HG;
 
 public class Item {
     private Integer attaque,defence;

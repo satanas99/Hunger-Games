@@ -1,4 +1,4 @@
-package Fonctions;
+package HG;
 
 import java.util.ArrayList;
 
@@ -6,25 +6,30 @@ import static Fonctions.MesFonctions.randomNumber;
 
 public class Joueur {
     private String nom, sexe;
-    private Integer vie, attaque, defence;
-    private ArrayList<Item> sac;
+    private Integer vie, attaque, defence, district;
+    private ListItems sac;
+
 
     public Joueur(String nom,String sexe){
+        //A la création du joueur il a des stats de base
         this.nom = nom;
         this.sexe = sexe;
         this.vie = 50;
         this.attaque = 5;
         this.defence = 5;
-        this.sac = new ArrayList<Item>();
-
+        this.district = 0;
+        this.sac = new ListItems();
     }
+
     public Joueur(String nom,String sexe, Integer vie, Integer attaque, Integer defence) {
+        //Si on doit créer un joueur spécial
         this.nom = nom;
         this.sexe = sexe;
         this.vie = vie;
         this.attaque = attaque;
         this.defence = defence;
-        this.sac = new ArrayList<Item>();
+        this.district = 0;
+        this.sac = new ListItems();
     }
 
     //Getter / Setter
@@ -47,28 +52,26 @@ public class Joueur {
     public void setDefence(Integer defence) {
         this.defence = defence;
     }
-    public ArrayList<Item> getSac() {
+    public ListItems getSac() {
         return sac;
     }
-    public void setSac(ArrayList<Item> sac) {
+    public void setSac(ListItems sac) {
         this.sac = sac;
     }
-    public String getNom() {
+
+    String getNom() {
         return nom;
-    }
-    public void setNom(String nom) {
-        this.nom = nom;
     }
     public String getSexe() {
         return sexe;
     }
-    public void setSexe(String sexe) {
-        this.sexe = sexe;
+    public Integer getDistrict() {
+        return district;
     }
 
     //Fonctions
     public void ajouteItem(Item item){
-        sac.add(item);
+        sac.addItem(item);
         addStats(item);
     }
 
@@ -80,10 +83,13 @@ public class Joueur {
             defence += item.getDefence();
         }
     }
+    public void addDistrict(Integer district){
+        this.district = district;
+    }
 
     public void supprimeItem(){
         int x = randomNumber(0,sac.size());
-        Item item = sac.get(x);
+        Item item = (Item) sac.get(x);
         sac.remove(x);
         removeStats(item);
     }
