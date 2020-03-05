@@ -5,6 +5,17 @@ import java.util.List;
 
 import static Fonctions.MesFonctions.*;
 
+/*
+Basé sur le site : https://brantsteele.net/hungergames/
+
+Partie custom pour essayer : http://brantsteele.net/hungergames/r.php?c=FMuMPYaE
+ */
+
+
+
+
+
+
 public class HungerGame {
     public static void main(String[] args) {
         //Initialise les variables
@@ -52,7 +63,9 @@ public class HungerGame {
                 nbPersonnesParDistrict = 2;
                 listJoueurs = demandeJoueurs(4);
             } else if (choix == 5) {
-                System.out.println("Vide");
+                System.out.println("liste pré-defini a 24");
+                nbPersonnesParDistrict = 24/12;
+                listJoueurs = new ListJoueur(true);
             }else {
                 System.out.println("Erreur de saisie");
             }

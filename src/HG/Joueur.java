@@ -65,9 +65,6 @@ public class Joueur {
     public ListItems getSac() {
         return sac;
     }
-    public void setSac(ListItems sac) {
-        this.sac = sac;
-    }
     public String getNom() {
         return nom;
     }

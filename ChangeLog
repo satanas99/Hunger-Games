@@ -1,3 +1,16 @@
 ### Affichage liste Joueurs ### 05/03/2020 ###
 
 - Modification de la classe setDistrict pour qu'il n'y ai pas la boucle infini
+
+### Ajout Events ### 05/03/2020 ###
+
+- Ajout du package Events
+- Ajout dans Events des classes qui font une liste (vide pour le moment) de phrase pour chaque etape du jeu (liste avec des phrases normales et une avec des morts)
+- Ajout dans Events 2 classes qui determine un evenement normal et un evenement où il y a des morts
+- Ajout dans HungerGame.java le site sur lequel j'ai pris exemple et un lien avec une partie custom
+
+A terminer : La classe EventFatal
+
+
+
+
