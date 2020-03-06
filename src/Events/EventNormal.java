@@ -19,6 +19,4 @@ public class EventNormal {
         return nombreTributsImpliquer;
     }
 
-
-
 }

@@ -11,6 +11,7 @@ public class BloodBath {
     //Constructeur
     public BloodBath(){
         this.listEvent = new ArrayList<>();
+        listEvent.add(new EventNormal("(Joueur1) s'enfuis", 1));
     }
 
     //Getter
