@@ -1,10 +1,6 @@
 package HG;
 
 import Events.*;
-import HG.*;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import static Fonctions.MesFonctions.*;
 
@@ -21,7 +17,7 @@ Partie custom pour essayer : http://brantsteele.net/hungergames/r.php?c=FMuMPYaE
 
 public class HungerGame {
 
-        //Attibuts
+    //Attibuts
         private ListItems listItems;
         private BloodBath bloodBath;
         private BloodBathFatal bloodBathFatal;
@@ -45,7 +41,7 @@ public class HungerGame {
         }
 
 
-    private ListJoueur initJoueurs() {
+    public ListJoueur initJoueurs() {
         //Demande le nombre de joueurs et appelle la fonction qui demande le nom des joueurs
         //Et initilise les districts aléatoirement
         //Retourne la liste des joueurs
@@ -80,7 +76,11 @@ public class HungerGame {
         return listJoueurs;
     }
 
-    private ListJoueur setDistrict(int nbPersonnesDistrict, ListJoueur listJoueurs) {
+    public ListJoueur getListJoueurs(){
+            return listJoueurs;
+    }
+
+    public ListJoueur setDistrict(int nbPersonnesDistrict, ListJoueur listJoueurs) {
         ListJoueur res = new ListJoueur();
         listJoueurs.shuffle();
         int district = 1;
@@ -96,7 +96,8 @@ public class HungerGame {
         return res;
     }
 
-    private ListJoueur demandeJoueurs(int nbr) {
+
+    public ListJoueur demandeJoueurs(int nbr) {
         //Demande le nom et le sexe du joueur
         ListJoueur listJoueurs = new ListJoueur();
         for (int i = 0; i < nbr; i++){
@@ -110,4 +111,45 @@ public class HungerGame {
         }
         return listJoueurs;
     }
+    //Retourne le joueur a l'indice x
+    public Joueur getJoueur(int x){
+            return listJoueurs.getJoueur(x);
+    }
+        //Simule un BloodBath
+    public void bloodBathEvent() {
+
+            ListJoueur liste = listJoueurs;
+
+
+            while (liste.size()>0){
+
+
+            }
+    }
+
+    //Simule un jour
+    public void dayEvent() {
+
+        ListJoueur liste = listJoueurs;
+
+
+        while (liste.size()>0){
+
+
+        }
+    }
+
+    //Simule une nuit
+    public void nightEvent() {
+
+        ListJoueur liste = listJoueurs;
+
+
+        while (liste.size()>0){
+
+
+        }
+    }
+
+
 }

@@ -21,3 +21,10 @@ A terminer : La classe EventFatal
 
 A terminer : - La classe EventFatal
              - MainActivity
+
+### v 0.1.0 ### 08/03/2020 ###
+- Système de version je ne sais pas encore précisément mais je commencer avec 0.1.0 ( le 1er chiffre sera une première version fonctionnelle le 2e chiffre une bonne avancer dans le programme et le 3e si je fait quelques changements)
+- Réarangement de la classe ListItems
+- Commencer la fonction bloodBathEvent, dayEvent et nightEvent dans la classe HungerGame pour simuler les jours associer
+
+A terminer : - La classe EventFatal

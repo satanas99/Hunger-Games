@@ -20,4 +20,13 @@ public class ListItems{
         listItems.add(item);
     }
 
+    public int size(){return listItems.size();}
+
+    public Item get(int x) {
+        return listItems.get(x);
+    }
+
+    public void remove(int x) {
+        listItems.remove(x);
+    }
 }
