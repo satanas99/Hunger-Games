@@ -2,7 +2,7 @@
 
 - Modification de la classe setDistrict pour qu'il n'y ai pas la boucle infini
 
-    ##############################################################################################
+
 ### Ajout Events ### 05/03/2020 ###
 
 - Ajout du package Events
@@ -28,3 +28,14 @@ A terminer : - La classe EventFatal
 - Commencer la fonction bloodBathEvent, dayEvent et nightEvent dans la classe HungerGame pour simuler les jours associer
 
 A terminer : - La classe EventFatal
+
+### v 0.1.1 ### 10/03/2020 ###
+- Ajout de test.java pour des test
+- Commencer dans test la fonction qui traduit une phrase d'un Event en mettant le nom du joueur a la place de [Joueur1]
+
+A terminer : - La classe EventFatal
+             - La fonction TraduitPhrase
+
+
+
+

@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f5eae65c-5002-413a-b121-9a7f00fc4313" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/MainActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ChangeLog" beforeDir="false" afterPath="$PROJECT_DIR$/ChangeLog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Events/BloodBath.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Events/BloodBath.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Events/EventNormal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Events/EventNormal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/HG/ListItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HG/ListItems.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/HungerGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HG/HungerGame.java" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,19 +47,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="Application.MainActivity">
+  <component name="RunManager" selected="Application.test">
     <configuration name="HungerGame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="HG.HungerGame" />
       <module name="Hunger Game" />
@@ -79,12 +62,32 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="test" />
+      <module name="Hunger Game" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.test" />
         <item itemvalue="Application.MainActivity" />
         <item itemvalue="Application.HungerGame" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -129,25 +132,30 @@
       <screen x="0" y="33" width="1920" height="1047" />
     </state>
     <state x="904" y="303" width="430" height="481" key="FileChooserDialogImpl/0.33.1920.1047@0.33.1920.1047" timestamp="1580975249766" />
-    <state width="1874" height="262" key="GridCell.Tab.0.bottom" timestamp="1583413433902">
-      <screen x="0" y="33" width="1920" height="1047" />
+    <state width="1394" height="219" key="GridCell.Tab.0.bottom" timestamp="1583847579681">
+      <screen x="0" y="33" width="1440" height="867" />
     </state>
+    <state width="1394" height="219" key="GridCell.Tab.0.bottom/0.33.1440.867@0.33.1440.867" timestamp="1583847579681" />
     <state width="1874" height="262" key="GridCell.Tab.0.bottom/0.33.1920.1047@0.33.1920.1047" timestamp="1583413433902" />
-    <state width="1874" height="262" key="GridCell.Tab.0.center" timestamp="1583413433902">
-      <screen x="0" y="33" width="1920" height="1047" />
+    <state width="1394" height="219" key="GridCell.Tab.0.center" timestamp="1583847579679">
+      <screen x="0" y="33" width="1440" height="867" />
     </state>
+    <state width="1394" height="219" key="GridCell.Tab.0.center/0.33.1440.867@0.33.1440.867" timestamp="1583847579679" />
     <state width="1874" height="262" key="GridCell.Tab.0.center/0.33.1920.1047@0.33.1920.1047" timestamp="1583413433902" />
-    <state width="1874" height="262" key="GridCell.Tab.0.left" timestamp="1583413433902">
-      <screen x="0" y="33" width="1920" height="1047" />
+    <state width="1394" height="219" key="GridCell.Tab.0.left" timestamp="1583847579678">
+      <screen x="0" y="33" width="1440" height="867" />
     </state>
+    <state width="1394" height="219" key="GridCell.Tab.0.left/0.33.1440.867@0.33.1440.867" timestamp="1583847579678" />
     <state width="1874" height="262" key="GridCell.Tab.0.left/0.33.1920.1047@0.33.1920.1047" timestamp="1583413433902" />
-    <state width="1874" height="262" key="GridCell.Tab.0.right" timestamp="1583413433902">
-      <screen x="0" y="33" width="1920" height="1047" />
+    <state width="1394" height="219" key="GridCell.Tab.0.right" timestamp="1583847579680">
+      <screen x="0" y="33" width="1440" height="867" />
     </state>
+    <state width="1394" height="219" key="GridCell.Tab.0.right/0.33.1440.867@0.33.1440.867" timestamp="1583847579680" />
     <state width="1874" height="262" key="GridCell.Tab.0.right/0.33.1920.1047@0.33.1920.1047" timestamp="1583413433902" />
-    <state x="653" y="383" key="com.intellij.ide.util.TipDialog" timestamp="1583487643747">
-      <screen x="0" y="33" width="1920" height="1047" />
+    <state x="490" y="323" key="com.intellij.ide.util.TipDialog" timestamp="1583846138222">
+      <screen x="0" y="33" width="1440" height="867" />
     </state>
+    <state x="490" y="323" key="com.intellij.ide.util.TipDialog/0.33.1440.867@0.33.1440.867" timestamp="1583846138222" />
     <state x="653" y="383" key="com.intellij.ide.util.TipDialog/0.33.1920.1047@0.33.1920.1047" timestamp="1583487643747" />
     <state x="705" y="188" width="506" height="737" key="refactoring.ChangeSignatureDialog" timestamp="1583413123669">
       <screen x="0" y="33" width="1920" height="1047" />
@@ -176,7 +184,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/HG/HungerGame.java</url>
           <line>142</line>
-          <properties class="HG.HungerGame" method="bloodBathEvent">
+          <properties class="HG.HungerGame" method="nightEvent">
             <option name="EMULATED" value="true" />
           </properties>
           <option name="timeStamp" value="9" />
