@@ -36,6 +36,13 @@ A terminer : - La classe EventFatal
 A terminer : - La classe EventFatal
              - La fonction TraduitPhrase
 
+### v 0.1.2 ### 11/03/2020 ###
+- Terminer la fonction traduirePhrase et implementation dans les classes EventNormal et EventFatal
+- Terminer la classe EventFatal pour determiner les mort et les kills
+- Ajout d'une variable kill dans Joueur pour connaitre son nombre de kills pour les stats 
+
+A Faire : - Tester si un EventFatal pour voir si le nombre de kill est comptabilisé
+
 
 
 

@@ -6,7 +6,7 @@ import static Fonctions.MesFonctions.randomNumber;
 
 public class Joueur {
     private String nom, sexe;
-    private Integer vie, attaque, defence, district;
+    private Integer vie, attaque, defence, district, kills;
     private ListItems sac;
 
 
@@ -18,6 +18,7 @@ public class Joueur {
         this.attaque = 5;
         this.defence = 5;
         this.district = 0;
+        this.kills = 0;
         this.sac = new ListItems();
     }
 
@@ -29,6 +30,7 @@ public class Joueur {
         this.attaque = 5;
         this.defence = 5;
         this.district = district;
+        this.kills = 0;
         this.sac = new ListItems();
     }
 

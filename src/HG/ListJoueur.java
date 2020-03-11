@@ -69,7 +69,6 @@ public class ListJoueur{
         Collections.shuffle(listJoueurs);
     }
 
-
     public void afficheJoueurs() {
         //Affiche la liste des joueurs
         for (Joueur joueur : listJoueurs) {

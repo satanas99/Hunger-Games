@@ -5,9 +5,13 @@ Les classes EventNormal et EventFatal définissent une phrase ainsi que plusieur
  -Si il faut posséder un Items spécifique pour avoir la phrase
  -2 Variables pour savoir qui est tuer et qui a tuer
 
- La phrase est donner avec
- - "(Joueur1)" "(Joueur2)" pour definir la place où le nom du joueur est placer
- - "(il/elle)" "(son/sa)" "(lui-meme/elle-meme)" pour definir la place où il y a besoin de faire en fonction du sexe du joueur
-
 Les autres classes sont des liste d'EventNormal ou d'EventFatal
+
+IMPORTANT
+ La phrase est donner avec
+ - "[Joueur1]" "[Joueur2]" pour definir la place où le nom du joueur est placer
+ - "[il/elle#]" "[son/sa#]" "[le/la#]" pour definir la place où il y a besoin de faire en fonction du sexe du joueur
+ Remplacer le # par le numero du joueur correspondant qu'il y ai 1 ou plusieurs joueurs
+
+
 
