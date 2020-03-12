@@ -4,17 +4,6 @@ import Events.*;
 
 import static Fonctions.MesFonctions.*;
 
-/*
-Basé sur le site : https://brantsteele.net/hungergames/
-
-Partie custom pour essayer : http://brantsteele.net/hungergames/r.php?c=FMuMPYaE
- */
-
-
-
-
-
-
 public class HungerGame {
 
     //Attibuts

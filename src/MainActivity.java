@@ -1,6 +1,12 @@
 import HG.HungerGame;
 import HG.ListJoueur;
 
+/*
+Basé sur le site : https://brantsteele.net/hungergames/
+
+Partie custom pour essayer : http://brantsteele.net/hungergames/r.php?c=FMuMPYaE
+ */
+
 public class MainActivity {
     public static void main(String[] args) {
         HungerGame hg = new HungerGame();

@@ -7,3 +7,4 @@ L'objectif et de faire un bot Discord par la suite
 Idées possible à ajouter :
   - Une Spécalité pour chaque district et donc un avantage pour le joueur en fonction de son district
   - Un menu pour ajouter / supprimer des phrases 
+  - Ajouter après chaque jour un récap des tributs mort

@@ -15,9 +15,11 @@ public class EventFatal {
      */
 
     //Constructeur
-    public EventFatal(String phrase, int nombreTributImpliquer){
+    public EventFatal(String phrase, int nombreTributImpliquer, boolean[] mort, int[] tuer){
         this.phrase = phrase;
         this.nombreTributsImpliquer = nombreTributImpliquer;
+        this.mort = mort;
+        this.tuer = tuer;
     }
 
     //Getters / Setters

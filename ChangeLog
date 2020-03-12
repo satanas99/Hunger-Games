@@ -30,8 +30,8 @@ A terminer : - La classe EventFatal
 A terminer : - La classe EventFatal
 
 ### v 0.1.1 ### 10/03/2020 ###
-- Ajout de test.java pour des test
-- Commencer dans test la fonction qui traduit une phrase d'un Event en mettant le nom du joueur a la place de [Joueur1]
+- Ajout de Test.testEventFatal.java pour des Test.testEventFatal
+- Commencer dans Test.testEventFatal la fonction qui traduit une phrase d'un Event en mettant le nom du joueur a la place de [Joueur1]
 
 A terminer : - La classe EventFatal
              - La fonction TraduitPhrase
@@ -39,10 +39,16 @@ A terminer : - La classe EventFatal
 ### v 0.1.2 ### 11/03/2020 ###
 - Terminer la fonction traduirePhrase et implementation dans les classes EventNormal et EventFatal
 - Terminer la classe EventFatal pour determiner les mort et les kills
-- Ajout d'une variable kill dans Joueur pour connaitre son nombre de kills pour les stats 
+- Ajout d'une variable kill dans Joueur pour connaitre son nombre de kills pour les stats
+- Ajout d'un script pour faire les commit
 
 A Faire : - Tester si un EventFatal pour voir si le nombre de kill est comptabilisé
 
+### v 0.1.3 ### 12/03/2020 ###
+-Ajout de la méthode ajouteKill a Joueur
+-Ajout de testEventFatal qui test et ajoute les kills d'un eventFatal aux joueurs associées
+-Commencer a ajouter des Events dans Day
 
+A Faire : -Ajouter des Events pour chaque etapes du jeu
 
 

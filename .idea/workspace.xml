@@ -2,14 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f5eae65c-5002-413a-b121-9a7f00fc4313" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Test/testEventFatal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ChangeLog" beforeDir="false" afterPath="$PROJECT_DIR$/ChangeLog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Commit.sh" beforeDir="false" afterPath="$PROJECT_DIR$/Commit.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Hunger Game/Events/EventFatal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hunger Game/Events/EventFatal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Hunger Game/Events/EventNormal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hunger Game/Events/EventNormal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Hunger Game/Events/Precision sur les classes Events" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hunger Game/Events/Precision sur les classes Events" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Hunger Game/HG/Joueur.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hunger Game/HG/Joueur.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Hunger Game/HG/ListJoueur.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hunger Game/HG/ListJoueur.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Hunger Game/test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Events/DayFatal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Events/DayFatal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Events/EventFatal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Events/EventFatal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Events/EventNormal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Events/EventNormal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Events/Precision sur les classes Events" beforeDir="false" afterPath="$PROJECT_DIR$/src/Events/Precision sur les classes Events" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HG/HungerGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HG/HungerGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/HG/Joueur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HG/Joueur.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/HG/ListJoueur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HG/ListJoueur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,13 +56,13 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ProjetPPE_RPG" />
     <property name="project.structure.last.edited" value="Facets" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
-  <component name="RunManager" selected="Application.test">
+  <component name="RunManager" selected="Application.testEventFatal">
     <configuration name="HungerGame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="HG.HungerGame" />
       <module name="Hunger Game" />
@@ -67,8 +77,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="test" />
+    <configuration name="testEventFatal" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Test.testEventFatal" />
       <module name="Hunger Game" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -76,7 +86,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.test" />
+        <item itemvalue="Application.testEventFatal" />
         <item itemvalue="Application.MainActivity" />
         <item itemvalue="Application.HungerGame" />
       </list>
@@ -133,35 +143,35 @@
       <screen x="0" y="33" width="1920" height="1047" />
     </state>
     <state x="929" y="232" width="380" height="623" key="#com.intellij.ide.util.MemberChooser/0.33.1920.1047@0.33.1920.1047" timestamp="1583415440398" />
-    <state x="904" y="303" width="430" height="481" key="FileChooserDialogImpl" timestamp="1580975249766">
+    <state x="904" y="303" width="430" height="481" key="FileChooserDialogImpl" timestamp="1584001335831">
       <screen x="0" y="33" width="1920" height="1047" />
     </state>
-    <state x="904" y="303" width="430" height="481" key="FileChooserDialogImpl/0.33.1920.1047@0.33.1920.1047" timestamp="1580975249766" />
-    <state width="1874" height="278" key="GridCell.Tab.0.bottom" timestamp="1583943690459">
+    <state x="904" y="303" width="430" height="481" key="FileChooserDialogImpl/0.33.1920.1047@0.33.1920.1047" timestamp="1584001335831" />
+    <state width="1874" height="278" key="GridCell.Tab.0.bottom" timestamp="1584003469079">
       <screen x="0" y="33" width="1920" height="1047" />
     </state>
     <state width="1394" height="219" key="GridCell.Tab.0.bottom/0.33.1440.867@0.33.1440.867" timestamp="1583848019907" />
-    <state width="1874" height="278" key="GridCell.Tab.0.bottom/0.33.1920.1047@0.33.1920.1047" timestamp="1583943690459" />
-    <state width="1874" height="278" key="GridCell.Tab.0.center" timestamp="1583943690458">
+    <state width="1874" height="278" key="GridCell.Tab.0.bottom/0.33.1920.1047@0.33.1920.1047" timestamp="1584003469079" />
+    <state width="1874" height="278" key="GridCell.Tab.0.center" timestamp="1584003469079">
       <screen x="0" y="33" width="1920" height="1047" />
     </state>
     <state width="1394" height="219" key="GridCell.Tab.0.center/0.33.1440.867@0.33.1440.867" timestamp="1583848019906" />
-    <state width="1874" height="278" key="GridCell.Tab.0.center/0.33.1920.1047@0.33.1920.1047" timestamp="1583943690458" />
-    <state width="1874" height="278" key="GridCell.Tab.0.left" timestamp="1583943690458">
+    <state width="1874" height="278" key="GridCell.Tab.0.center/0.33.1920.1047@0.33.1920.1047" timestamp="1584003469079" />
+    <state width="1874" height="278" key="GridCell.Tab.0.left" timestamp="1584003469078">
       <screen x="0" y="33" width="1920" height="1047" />
     </state>
     <state width="1394" height="219" key="GridCell.Tab.0.left/0.33.1440.867@0.33.1440.867" timestamp="1583848019905" />
-    <state width="1874" height="278" key="GridCell.Tab.0.left/0.33.1920.1047@0.33.1920.1047" timestamp="1583943690458" />
-    <state width="1874" height="278" key="GridCell.Tab.0.right" timestamp="1583943690458">
+    <state width="1874" height="278" key="GridCell.Tab.0.left/0.33.1920.1047@0.33.1920.1047" timestamp="1584003469078" />
+    <state width="1874" height="278" key="GridCell.Tab.0.right" timestamp="1584003469079">
       <screen x="0" y="33" width="1920" height="1047" />
     </state>
     <state width="1394" height="219" key="GridCell.Tab.0.right/0.33.1440.867@0.33.1440.867" timestamp="1583848019906" />
-    <state width="1874" height="278" key="GridCell.Tab.0.right/0.33.1920.1047@0.33.1920.1047" timestamp="1583943690458" />
-    <state x="653" y="383" key="com.intellij.ide.util.TipDialog" timestamp="1583941183334">
+    <state width="1874" height="278" key="GridCell.Tab.0.right/0.33.1920.1047@0.33.1920.1047" timestamp="1584003469079" />
+    <state x="653" y="383" key="com.intellij.ide.util.TipDialog" timestamp="1584000125426">
       <screen x="0" y="33" width="1920" height="1047" />
     </state>
     <state x="490" y="323" key="com.intellij.ide.util.TipDialog/0.33.1440.867@0.33.1440.867" timestamp="1583846138222" />
-    <state x="653" y="383" key="com.intellij.ide.util.TipDialog/0.33.1920.1047@0.33.1920.1047" timestamp="1583941183334" />
+    <state x="653" y="383" key="com.intellij.ide.util.TipDialog/0.33.1920.1047@0.33.1920.1047" timestamp="1584000125426" />
     <state x="705" y="188" width="506" height="737" key="refactoring.ChangeSignatureDialog" timestamp="1583413123669">
       <screen x="0" y="33" width="1920" height="1047" />
     </state>
@@ -172,7 +182,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/HG/HungerGame.java</url>
-          <line>118</line>
+          <line>107</line>
           <properties class="HG.HungerGame" method="bloodBathEvent">
             <option name="EMULATED" value="true" />
           </properties>
@@ -180,7 +190,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/HG/HungerGame.java</url>
-          <line>130</line>
+          <line>119</line>
           <properties class="HG.HungerGame" method="dayEvent">
             <option name="EMULATED" value="true" />
           </properties>
@@ -188,7 +198,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/HG/HungerGame.java</url>
-          <line>142</line>
+          <line>131</line>
           <properties class="HG.HungerGame" method="nightEvent">
             <option name="EMULATED" value="true" />
           </properties>

@@ -55,11 +55,11 @@ public class ListJoueur{
         }
     }
 
+
     public Joueur getJoueur(int i){
         //retourne le joueur a l'index i
         return listJoueurs.get(i);
     }
-
     public Joueur getLastJoueur(){
         return listJoueurs.get(listJoueurs.size()-1);
     }
@@ -72,7 +72,7 @@ public class ListJoueur{
     public void afficheJoueurs() {
         //Affiche la liste des joueurs
         for (Joueur joueur : listJoueurs) {
-            System.out.println("Nom : " + joueur.getNom() + "  Sexe : " + joueur.getSexe() + "  District : " + joueur.getDistrict());
+            System.out.println("Nom : " + joueur.getNom() + " | " + "Sexe : " + joueur.getSexe() + " | " + " District : " + joueur.getDistrict() + " | " + "Kills : " + joueur.getKills());
         }
     }
 
