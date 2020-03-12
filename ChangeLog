@@ -51,4 +51,5 @@ A Faire : - Tester si un EventFatal pour voir si le nombre de kill est comptabil
 
 A Faire : -Ajouter des Events pour chaque etapes du jeu
 
-
+### v 0.1.4 ### 12/03/2020 ###
+- Ajout Event dans Day

@@ -20,6 +20,7 @@ public class testEventFatal {
             ljoueurs.getJoueur(compt).ajouteKill(kill);
             compt+=1;
         }
+        System.out.println(event.getPhrase());
         System.out.println(phrase);
         ljoueurs.afficheJoueurs();
     }

@@ -4,26 +4,46 @@ import java.util.ArrayList;
 
 public class DayFatal {
     //Attribut
-    private ArrayList<EventNormal> listEvent;
+    private ArrayList<EventFatal> listEvent;
 
     //Constructeur
     public DayFatal(){
         this.listEvent = new ArrayList<>();
 
-        boolean[] mort = {false,true,true};
-        int[] tuer = {2,0,0};
-        listEvent.addEventF(new EventFatal("[Joueur1] combat [Joueur2] et [Joueur3]. [il/elle1] les tue.", 3, mort , tuer));
+        //Event 1
+        boolean[] mort = {false,true};
+        int[] tuer = {1,0};
+        addEventF(new EventFatal("[Joueur1] plante un couteau dans la tête de [Joueur2].", 2, mort , tuer));
+
+        //Event
+        mort = new boolean[]{};
+        tuer = new int[]{};
+        addEventF(new EventFatal("", 3, mort , tuer));
+
+
+
+
+
+        /*
+
+        //Event
+        mort = new boolean[]{};
+        tuer = new int[]{};
+        addEventF(new EventFatal("", 3, mort , tuer));
+         */
+
+
     }
 
     //Getter
-    public ArrayList<EventNormal> getListEvent() {
+    public ArrayList<EventFatal> getListEvent() {
         return listEvent;
     }
 
     //Fonctions
 
     // On ajoute un EventFatal a la liste
-    public void addEventF(EventNormal event){
+    public void addEventF(EventFatal event){
         listEvent.add(event);
     }
 }
