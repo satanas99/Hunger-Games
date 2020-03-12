@@ -4,8 +4,12 @@
     <list default="true" id="f5eae65c-5002-413a-b121-9a7f00fc4313" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ChangeLog" beforeDir="false" afterPath="$PROJECT_DIR$/ChangeLog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Events/BloodBath.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Events/BloodBath.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Events/BloodBathFatal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Events/BloodBathFatal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Events/Day.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Events/Day.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Events/DayFatal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Events/DayFatal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Test/testEventFatal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test/testEventFatal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Events/Night.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Events/Night.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Events/NightFatal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Events/NightFatal.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,11 +157,11 @@
     </state>
     <state width="1394" height="219" key="GridCell.Tab.0.right/0.33.1440.867@0.33.1440.867" timestamp="1583848019906" />
     <state width="1348" height="278" key="GridCell.Tab.0.right/0.33.1920.1047@0.33.1920.1047" timestamp="1584014541473" />
-    <state x="653" y="383" key="com.intellij.ide.util.TipDialog" timestamp="1584013657140">
+    <state x="653" y="383" key="com.intellij.ide.util.TipDialog" timestamp="1584028750973">
       <screen x="0" y="33" width="1920" height="1047" />
     </state>
     <state x="490" y="323" key="com.intellij.ide.util.TipDialog/0.33.1440.867@0.33.1440.867" timestamp="1583846138222" />
-    <state x="653" y="383" key="com.intellij.ide.util.TipDialog/0.33.1920.1047@0.33.1920.1047" timestamp="1584013657140" />
+    <state x="653" y="383" key="com.intellij.ide.util.TipDialog/0.33.1920.1047@0.33.1920.1047" timestamp="1584028750973" />
     <state x="705" y="188" width="506" height="737" key="refactoring.ChangeSignatureDialog" timestamp="1583413123669">
       <screen x="0" y="33" width="1920" height="1047" />
     </state>

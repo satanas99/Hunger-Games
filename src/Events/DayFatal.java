@@ -15,13 +15,15 @@ public class DayFatal {
         int[] tuer = {1,0};
         addEventF(new EventFatal("[Joueur1] plante un couteau dans la tête de [Joueur2].", 2, mort , tuer));
 
-        //Event
-        mort = new boolean[]{};
-        tuer = new int[]{};
-        addEventF(new EventFatal("", 3, mort , tuer));
+        //Event 2
+        mort = new boolean[]{false,true};
+        tuer = new int[]{1,0};
+        addEventF(new EventFatal("[Joueur1] frappe plusieurs fois la tête de [Joueur2] contre un rocher.", 2, mort , tuer));
 
-
-
+        //Event 3
+        mort = new boolean[]{true};
+        tuer = new int[]{0};
+        addEventF(new EventFatal("Un pikachu sauvage apparait et attaque tonnere sur [Joueur1]",1 , mort , tuer));
 
 
         /*
@@ -29,7 +31,7 @@ public class DayFatal {
         //Event
         mort = new boolean[]{};
         tuer = new int[]{};
-        addEventF(new EventFatal("", 3, mort , tuer));
+        addEventF(new EventFatal("", , mort , tuer));
          */
 
 

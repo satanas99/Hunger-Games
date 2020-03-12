@@ -9,6 +9,20 @@ public class Day {
     //Constructeur
     public Day(){
         this.listEvent = new ArrayList<>();
+
+        //Event 1
+        addEventN(new EventNormal("[Joueur1] vole [Joueur2] alors qu'[il/elle2] ne regarde pas.", 2));
+
+        //Event 2
+        addEventN(new EventNormal("[Joueur1] découvre une grotte.", 1));
+
+        //Event 3
+        addEventN(new EventNormal("[Joueur1] recherche une source d'eau.",1 ));
+
+        /*
+        //Event
+        addEventN(new EventNormal("", ));
+         */
     }
 
     //Getter

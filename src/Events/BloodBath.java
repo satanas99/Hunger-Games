@@ -11,7 +11,21 @@ public class BloodBath {
     //Constructeur
     public BloodBath(){
         this.listEvent = new ArrayList<>();
-        listEvent.add(new EventNormal("(Joueur1) s'enfuis", 1));
+
+        //Event 1
+        addEventN(new EventNormal("[Joueur1] s'enfuis de la corne d'abondance", 1));
+
+        //Event 2
+        addEventN(new EventNormal("[Joueur1] attrape un bouclier appuyé sur la corne d'abondance.", 1 ));
+
+        //Event 3
+        addEventN(new EventNormal("[Joueur1] trouve un sac plein d'explosifs.", 1));
+
+        /*
+        //Event
+        addEventN(new EventNormal("", ));
+         */
+
     }
 
     //Getter

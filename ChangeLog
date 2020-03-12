@@ -53,3 +53,14 @@ A Faire : -Ajouter des Events pour chaque etapes du jeu
 
 ### v 0.1.4 ### 12/03/2020 ###
 - Ajout Event dans Day
+
+### v 0.1.5 ### 12/03/2020 ###
+- Ajout de 3 Events dans chaque étapes du jeu
+
+A Faire : -Faire la gestion des items dans les events
+          -Faire un test avec une simulation d'un Jour pour voir si les kills, items, mort... fonctionnent correctement
+
+
+
+
+
