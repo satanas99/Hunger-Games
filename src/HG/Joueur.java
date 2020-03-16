@@ -8,6 +8,7 @@ public class Joueur {
     private String nom, sexe;
     private Integer vie, attaque, defence, district, kills;
     private ListItems sac;
+    private boolean mort;
 
 
     public Joueur(String nom,String sexe){
@@ -20,6 +21,7 @@ public class Joueur {
         this.district = 0;
         this.kills = 0;
         this.sac = new ListItems();
+        this.mort = false;
     }
 
     public Joueur(String nom,String sexe, int district){
@@ -32,6 +34,7 @@ public class Joueur {
         this.district = district;
         this.kills = 0;
         this.sac = new ListItems();
+        this.mort = false;
     }
 
     public Joueur(String nom,String sexe, Integer vie, Integer attaque, Integer defence) {
@@ -43,10 +46,17 @@ public class Joueur {
         this.defence = defence;
         this.district = 0;
         this.sac = new ListItems();
+        this.mort = false;
     }
 
     //Getter / Setter
 
+    public boolean isMort() {
+        return mort;
+    }
+    public void setMort(boolean mort) {
+        this.mort = mort;
+    }
     public Integer getKills() {
         return kills;
     }

@@ -69,4 +69,10 @@ A Faire : -Faire la gestion des items dans les events
 
 A Faire : -Faire le testBloodbath
 
-
+### v 0.1.7 ### 16/03/2020 ###
+-Creation d'un test pour le bloodbath
+-Ajout dans HungerGame d'une variable listJoueursD pour avoir la liste des joueurs mort, qui pourra determiner le classement des joueurs a a fin du jeu
+-Ajout d'une méthode pour tirer un Event au hasard, d'une liste d'events
+-Ajout d'une méthode pour mélanger la liste de joueurs
+-Ajout de la variable Mort pour savoir si le joueur est mort
+-Implementation de la méthode dans HungerGame.Bloodbath (Ne fonctionne pas pour le moment)

@@ -59,7 +59,7 @@
       <recent name="HG" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.testItems">
+  <component name="RunManager" selected="Application.MainActivity">
     <configuration name="HungerGame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="HG.HungerGame" />
       <module name="Hunger Game" />
@@ -70,6 +70,19 @@
     <configuration name="MainActivity" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="MainActivity" />
       <module name="Hunger Game" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestBloodbath" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Test.TestBloodbath" />
+      <module name="Hunger Game" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -96,9 +109,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MainActivity" />
+        <item itemvalue="Application.TestBloodbath" />
         <item itemvalue="Application.testItems" />
         <item itemvalue="Application.testEventFatal" />
-        <item itemvalue="Application.MainActivity" />
         <item itemvalue="Application.HungerGame" />
       </list>
     </recent_temporary>
@@ -126,7 +140,7 @@
       <option name="presentableId" value="Default" />
       <updated>1580973287372</updated>
       <workItem from="1584209174725" duration="5762000" />
-      <workItem from="1584373112078" duration="286000" />
+      <workItem from="1584373112078" duration="13561000" />
     </task>
     <servers />
   </component>
@@ -155,10 +169,10 @@
       <screen x="0" y="33" width="1920" height="1047" />
     </state>
     <state x="705" y="361" width="618" height="386" key="#com.intellij.fileTypes.FileTypeChooser/0.33.1920.1047@0.33.1920.1047" timestamp="1583414297857" />
-    <state x="899" y="205" width="380" height="623" key="#com.intellij.ide.util.MemberChooser" timestamp="1584213620991">
+    <state x="899" y="205" width="380" height="623" key="#com.intellij.ide.util.MemberChooser" timestamp="1584384570308">
       <screen x="0" y="0" width="1857" height="1080" />
     </state>
-    <state x="899" y="205" key="#com.intellij.ide.util.MemberChooser/0.0.1857.1080@0.0.1857.1080" timestamp="1584213620991" />
+    <state x="899" y="205" key="#com.intellij.ide.util.MemberChooser/0.0.1857.1080@0.0.1857.1080" timestamp="1584384570308" />
     <state x="929" y="232" width="380" height="623" key="#com.intellij.ide.util.MemberChooser/0.33.1920.1047@0.33.1920.1047" timestamp="1583415440398" />
     <state x="658" y="315" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1584212553949">
       <screen x="0" y="0" width="1857" height="1080" />
@@ -172,47 +186,75 @@
       <screen x="0" y="33" width="1920" height="1047" />
     </state>
     <state x="904" y="303" width="430" height="481" key="FileChooserDialogImpl/0.33.1920.1047@0.33.1920.1047" timestamp="1584001335831" />
-    <state width="1814" height="295" key="GridCell.Tab.0.bottom" timestamp="1584216102625">
+    <state width="1814" height="448" key="GridCell.Tab.0.bottom" timestamp="1584387279729">
       <screen x="0" y="0" width="1857" height="1080" />
     </state>
-    <state width="1814" height="295" key="GridCell.Tab.0.bottom/0.0.1857.1080@0.0.1857.1080" timestamp="1584216102625" />
+    <state width="1814" height="448" key="GridCell.Tab.0.bottom/0.0.1857.1080@0.0.1857.1080" timestamp="1584387279729" />
     <state width="1394" height="219" key="GridCell.Tab.0.bottom/0.33.1440.867@0.33.1440.867" timestamp="1583848019907" />
     <state width="1348" height="278" key="GridCell.Tab.0.bottom/0.33.1920.1047@0.33.1920.1047" timestamp="1584014541474" />
-    <state width="1814" height="295" key="GridCell.Tab.0.center" timestamp="1584216102624">
+    <state width="1814" height="448" key="GridCell.Tab.0.center" timestamp="1584387279729">
       <screen x="0" y="0" width="1857" height="1080" />
     </state>
-    <state width="1814" height="295" key="GridCell.Tab.0.center/0.0.1857.1080@0.0.1857.1080" timestamp="1584216102624" />
+    <state width="1814" height="448" key="GridCell.Tab.0.center/0.0.1857.1080@0.0.1857.1080" timestamp="1584387279729" />
     <state width="1394" height="219" key="GridCell.Tab.0.center/0.33.1440.867@0.33.1440.867" timestamp="1583848019906" />
     <state width="1348" height="278" key="GridCell.Tab.0.center/0.33.1920.1047@0.33.1920.1047" timestamp="1584014541473" />
-    <state width="1814" height="295" key="GridCell.Tab.0.left" timestamp="1584216102624">
+    <state width="1814" height="448" key="GridCell.Tab.0.left" timestamp="1584387279729">
       <screen x="0" y="0" width="1857" height="1080" />
     </state>
-    <state width="1814" height="295" key="GridCell.Tab.0.left/0.0.1857.1080@0.0.1857.1080" timestamp="1584216102624" />
+    <state width="1814" height="448" key="GridCell.Tab.0.left/0.0.1857.1080@0.0.1857.1080" timestamp="1584387279729" />
     <state width="1394" height="219" key="GridCell.Tab.0.left/0.33.1440.867@0.33.1440.867" timestamp="1583848019905" />
     <state width="1348" height="278" key="GridCell.Tab.0.left/0.33.1920.1047@0.33.1920.1047" timestamp="1584014541473" />
-    <state width="1814" height="295" key="GridCell.Tab.0.right" timestamp="1584216102624">
+    <state width="1814" height="448" key="GridCell.Tab.0.right" timestamp="1584387279729">
       <screen x="0" y="0" width="1857" height="1080" />
     </state>
-    <state width="1814" height="295" key="GridCell.Tab.0.right/0.0.1857.1080@0.0.1857.1080" timestamp="1584216102624" />
+    <state width="1814" height="448" key="GridCell.Tab.0.right/0.0.1857.1080@0.0.1857.1080" timestamp="1584387279729" />
     <state width="1394" height="219" key="GridCell.Tab.0.right/0.33.1440.867@0.33.1440.867" timestamp="1583848019906" />
     <state width="1348" height="278" key="GridCell.Tab.0.right/0.33.1920.1047@0.33.1920.1047" timestamp="1584014541473" />
+    <state width="1814" height="364" key="GridCell.Tab.1.bottom" timestamp="1584380453761">
+      <screen x="0" y="0" width="1857" height="1080" />
+    </state>
+    <state width="1814" height="364" key="GridCell.Tab.1.bottom/0.0.1857.1080@0.0.1857.1080" timestamp="1584380453761" />
+    <state width="1814" height="364" key="GridCell.Tab.1.center" timestamp="1584380453760">
+      <screen x="0" y="0" width="1857" height="1080" />
+    </state>
+    <state width="1814" height="364" key="GridCell.Tab.1.center/0.0.1857.1080@0.0.1857.1080" timestamp="1584380453760" />
+    <state width="1814" height="364" key="GridCell.Tab.1.left" timestamp="1584380453760">
+      <screen x="0" y="0" width="1857" height="1080" />
+    </state>
+    <state width="1814" height="364" key="GridCell.Tab.1.left/0.0.1857.1080@0.0.1857.1080" timestamp="1584380453760" />
+    <state width="1814" height="364" key="GridCell.Tab.1.right" timestamp="1584380453761">
+      <screen x="0" y="0" width="1857" height="1080" />
+    </state>
+    <state width="1814" height="364" key="GridCell.Tab.1.right/0.0.1857.1080@0.0.1857.1080" timestamp="1584380453761" />
     <state x="632" y="361" key="com.intellij.ide.util.TipDialog" timestamp="1584373141908">
       <screen x="0" y="0" width="1857" height="1080" />
     </state>
     <state x="632" y="361" key="com.intellij.ide.util.TipDialog/0.0.1857.1080@0.0.1857.1080" timestamp="1584373141908" />
     <state x="490" y="323" key="com.intellij.ide.util.TipDialog/0.33.1440.867@0.33.1440.867" timestamp="1583846138222" />
     <state x="653" y="383" key="com.intellij.ide.util.TipDialog/0.33.1920.1047@0.33.1920.1047" timestamp="1584028750973" />
+    <state x="-19" y="0" width="942" height="1087" key="dock-window-1" timestamp="1584375958447">
+      <screen x="0" y="0" width="1857" height="1080" />
+    </state>
+    <state x="-19" y="0" width="942" height="1087" key="dock-window-1/0.0.1857.1080@0.0.1857.1080" timestamp="1584375958447" />
+    <state x="-7" y="0" width="870" height="1087" key="dock-window-2" timestamp="1584375958447">
+      <screen x="0" y="0" width="1857" height="1080" />
+    </state>
+    <state x="-7" y="0" width="870" height="1087" key="dock-window-2/0.0.1857.1080@0.0.1857.1080" timestamp="1584375958447" />
     <state x="705" y="188" width="506" height="737" key="refactoring.ChangeSignatureDialog" timestamp="1583413123669">
       <screen x="0" y="33" width="1920" height="1047" />
     </state>
     <state x="705" y="188" width="506" height="737" key="refactoring.ChangeSignatureDialog/0.33.1920.1047@0.33.1920.1047" timestamp="1583413123669" />
+    <state x="591" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1584385001435">
+      <screen x="0" y="0" width="1857" height="1080" />
+    </state>
+    <state x="591" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1857.1080@0.0.1857.1080" timestamp="1584385001435" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/HG/HungerGame.java</url>
-          <line>119</line>
+          <line>224</line>
           <properties class="HG.HungerGame" method="dayEvent">
             <option name="EMULATED" value="true" />
           </properties>
@@ -220,19 +262,11 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/HG/HungerGame.java</url>
-          <line>131</line>
+          <line>237</line>
           <properties class="HG.HungerGame" method="nightEvent">
             <option name="EMULATED" value="true" />
           </properties>
           <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/HG/HungerGame.java</url>
-          <line>107</line>
-          <properties class="HG.HungerGame" method="bloodBathEvent">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

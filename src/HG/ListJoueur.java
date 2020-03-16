@@ -62,7 +62,16 @@ public class ListJoueur{
             listJoueurs.add(new Joueur("Aurelle", "F"));
             listJoueurs.add(new Joueur("Kamashi", "M"));
             listJoueurs.add(new Joueur("lmons", "M"));
+            listJoueurs.add(new Joueur("Chuck Norris", "M"));
+            listJoueurs.add(new Joueur("Quelqu'un", "M"));
+        }else{
+            this.listJoueurs = new ArrayList<>();
+            listJoueurs.add(new Joueur("Toto", "M"));
+            listJoueurs.add(new Joueur("Titi", "M"));
+            listJoueurs.add(new Joueur("Tata", "F"));
+            listJoueurs.add(new Joueur("Tutu", "F"));
         }
+
     }
 
     public ArrayList<Joueur> getListJoueurs() {
@@ -85,7 +94,7 @@ public class ListJoueur{
     public void afficheJoueurs() {
         //Affiche la liste des joueurs
         for (Joueur joueur : listJoueurs) {
-            System.out.println("Nom : " + joueur.getNom() + " | " + "Sexe : " + joueur.getSexe() + " | " + " District : " + joueur.getDistrict() + " | " + "Kills : " + joueur.getKills());
+            System.out.println("Nom : " + joueur.getNom() + " | " + "Sexe : " + joueur.getSexe() + " | " + " District : " + joueur.getDistrict() + " | " + "Kills : " + joueur.getKills() + " | " + "EstMort : " + joueur.isMort());
         }
     }
 
@@ -111,5 +120,9 @@ public class ListJoueur{
     public void supprLastJoueur() {
         //Supprime le dernier joueur de la liste
         listJoueurs.remove(listJoueurs.size()-1);
+    }
+
+    public void removeJoueur(int i) {//Enleve le joueur a l'indice donner
+        listJoueurs.remove(i);
     }
 }
