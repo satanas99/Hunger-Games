@@ -60,7 +60,13 @@ A Faire : -Ajouter des Events pour chaque etapes du jeu
 A Faire : -Faire la gestion des items dans les events
           -Faire un test avec une simulation d'un Jour pour voir si les kills, items, mort... fonctionnent correctement
 
+### v 0.1.6 ### 14/03/2020 ###
+-Ajout d'une méthode pour afficher une liste des Items que possède un joueur
+-Ajout d'une m"thode pour ajouter plusieurs items aux items posséder pour le joueur
+-Ajout de 2 attribut a EventFatal et event pour gerer les items obtenus
+-Ajout de testItem pour tester l'ajout d'un item (fonctionne)
+-Ajout d'un testBloodbath pour simuler un bloodbath
 
-
+A Faire : -Faire le testBloodbath
 
 

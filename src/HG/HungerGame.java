@@ -14,7 +14,7 @@ public class HungerGame {
         private DayFatal dayFatal;
         private Night night;
         private NightFatal nightFatal;
-        private ListJoueur listJoueurs;
+        private ListJoueur listJoueurs, listJoueurD;
 
 
         // Constructeur
@@ -54,8 +54,8 @@ public class HungerGame {
                 nbPersonnesParDistrict = 48/12;
                 listJoueurs = demandeJoueurs(48);
             } else if (choix == 4) {
-                System.out.println("liste pré-defini a 24");
-                nbPersonnesParDistrict = 24/12;
+                System.out.println("liste pré-defini a 48");
+                nbPersonnesParDistrict = 48/12;
                 listJoueurs = new ListJoueur(true);
             }else {
                 System.out.println("Erreur de saisie");

@@ -1,5 +1,6 @@
 package Events;
 
+import HG.ListItems;
 import HG.ListJoueur;
 
 public class EventNormal {
@@ -7,13 +8,30 @@ public class EventNormal {
     private String phrase;
     private int nombreTributsImpliquer;
 
+    private ListItems listitem; //Liste des items qui peuvent être ajouter
+    private boolean[] ajouteItem; //Pour determiner qui obtient l'item
 
     //Constructeur
     public EventNormal(String phrase, int nombreTributImpliquer){
         this.phrase = phrase;
         this.nombreTributsImpliquer = nombreTributImpliquer;
+        this.listitem =new ListItems();
+        this.ajouteItem = new boolean[0];
     }
 
+    public EventNormal(String phrase, int nombreTributImpliquer,ListItems listitem, boolean[] ajouteItem){
+        this.phrase = phrase;
+        this.nombreTributsImpliquer = nombreTributImpliquer;
+        this.listitem =listitem;
+        this.ajouteItem = ajouteItem;
+    }
+
+    public ListItems getListitem() {
+        return listitem;
+    }
+    public boolean[] getAjouteItem() {
+        return ajouteItem;
+    }
     public String getPhrase() {
         return phrase;
     }

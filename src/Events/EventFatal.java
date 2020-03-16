@@ -1,5 +1,6 @@
 package Events;
 
+import HG.ListItems;
 import HG.ListJoueur;
 
 public class EventFatal {
@@ -8,11 +9,15 @@ public class EventFatal {
     private int nombreTributsImpliquer;
     private boolean[] mort; //Tableaux contenant dans des boolean signifiant si le joueur est mort ou non
     private int[] tuer; //Tableaux contenant dans des nombres signifiant combien le joueur a tuer de personnes
-
     /* Par exemple, si il y a 4 tributs impliquer et que le 1er tue tout le monde les tableaux seront
     mort = [false,true,true,true]       le 1er est vivant et les 3 autres sont morts
     tuer = [3,0,0,0]                    le 1er a tuer 3 personnes et les autres 0
-     */
+    */
+
+    private ListItems listitem; //Liste des items qui peuvent être ajouter
+    private boolean[] ajouteItem; //Pour determiner qui obtient l'item
+
+
 
     //Constructeur
     public EventFatal(String phrase, int nombreTributImpliquer, boolean[] mort, int[] tuer){
@@ -20,6 +25,17 @@ public class EventFatal {
         this.nombreTributsImpliquer = nombreTributImpliquer;
         this.mort = mort;
         this.tuer = tuer;
+        this.listitem =new ListItems();
+        this.ajouteItem = new boolean[0];
+    }
+
+    public EventFatal(String phrase, int nombreTributImpliquer, boolean[] mort, int[] tuer, ListItems listitem, boolean[] ajouteItem){
+        this.phrase = phrase;
+        this.nombreTributsImpliquer = nombreTributImpliquer;
+        this.mort = mort;
+        this.tuer = tuer;
+        this.listitem =listitem;
+        this.ajouteItem = ajouteItem;
     }
 
     //Getters / Setters
@@ -34,6 +50,12 @@ public class EventFatal {
     }
     public int getNombreTributsImpliquer() {
         return nombreTributsImpliquer;
+    }
+    public ListItems getListitem() {
+        return listitem;
+    }
+    public boolean[] getAjouteItem() {
+        return ajouteItem;
     }
 
     //Méthodes

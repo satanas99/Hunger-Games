@@ -117,4 +117,9 @@ public class Joueur {
     }
 
 
+    public void ajouteItems(ListItems listItems) {//Ajoute plusieurs Item au sac
+        for (Item item: listItems.getListItems()) {
+            sac.addItem(item);
+        }
+    }
 }
