@@ -19,7 +19,7 @@ public class EventNormal {
         this.ajouteItem = new boolean[0];
     }
 
-    public EventNormal(String phrase, int nombreTributImpliquer,ListItems listitem, boolean[] ajouteItem){
+    public EventNormal(String phrase, int nombreTributImpliquer,ListItems listitem){
         this.phrase = phrase;
         this.nombreTributsImpliquer = nombreTributImpliquer;
         this.listitem =listitem;

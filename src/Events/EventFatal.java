@@ -15,7 +15,7 @@ public class EventFatal {
     */
 
     private ListItems listitem; //Liste des items qui peuvent être ajouter
-    private boolean[] ajouteItem; //Pour determiner qui obtient l'item
+    private boolean[] quiAItem; //Pour determiner a qui appartient l'item pour savoir si on affiche la phrase
 
 
 
@@ -26,17 +26,19 @@ public class EventFatal {
         this.mort = mort;
         this.tuer = tuer;
         this.listitem =new ListItems();
-        this.ajouteItem = new boolean[0];
+        this.quiAItem = new boolean[0];
     }
 
-    public EventFatal(String phrase, int nombreTributImpliquer, boolean[] mort, int[] tuer, ListItems listitem, boolean[] ajouteItem){
+    public EventFatal(String phrase, int nombreTributImpliquer, boolean[] mort, int[] tuer, ListItems listitem, boolean[] quiAItem){
         this.phrase = phrase;
         this.nombreTributsImpliquer = nombreTributImpliquer;
         this.mort = mort;
         this.tuer = tuer;
         this.listitem =listitem;
-        this.ajouteItem = ajouteItem;
+        this.quiAItem = quiAItem;
     }
+
+
 
     //Getters / Setters
     public boolean[] getMort() {
@@ -55,7 +57,7 @@ public class EventFatal {
         return listitem;
     }
     public boolean[] getAjouteItem() {
-        return ajouteItem;
+        return quiAItem;
     }
 
     //Méthodes

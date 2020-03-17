@@ -1,10 +1,13 @@
 package HG;
 
+import com.sun.source.tree.LiteralTree;
+
 import java.util.ArrayList;
 
 public class ListItems{
     //Attribut
     private ArrayList<Item> listItems;
+
 
     //Constructeur
     public ListItems(){
@@ -13,6 +16,10 @@ public class ListItems{
         listItems.add(new Item("Epée",5,0));
         listItems.add(new Item("Bouclier",0,5));
         listItems.add(new Item("Trident",3,0));*/
+    }
+    public ListItems(Item item){
+        this.listItems = new ArrayList<>();
+        this.listItems.add(item);
     }
 
     //Fonctions

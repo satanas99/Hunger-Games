@@ -157,81 +157,142 @@ public class HungerGame {
 
     //Simule un BloodBath
     public void bloodBathEvent() {
-            ListJoueur temp = listJoueurs;
-            temp.shuffle();
-            while (temp.getListJoueurs().size()>0){
-                int rdm = randomNumber(0,100);
-                //temp.shuffle();
-                if (rdm < probaDeathBloodbath) {//Si il faut un event death
-                    boolean good = false;
-                    while (!good){
-                        EventFatal event = getEventFatal(bloodBathFatal.getListEvent()); //On recupere un Event au hasard
-                        if (event.getNombreTributsImpliquer() <= temp.size()){  //Si le nombre de tribut impliquer dans l'event est plus petit que le nombre qui reste dans la liste
+        ListJoueur liste = listJoueurs;
 
-                            //Initialisation de la liste des joueurs impliquer dans l'event
-                            ListJoueur listEvent = initEventTeamF(event, temp);
+        ListJoueur listeVivant = new ListJoueur();
+        while (liste.size() > 0){
+            int rdm = randomNumber(0,100);
+            liste.shuffle();
+            if (rdm < probaDeathBloodbath){
+                EventFatal event = getEventFatal(bloodBathFatal.getListEvent()); //On recupere un Event au hasard
 
-                            //Affiche la phrase
-                            System.out.println(event.traduirePhrase(listEvent));
-
-                            //Ajout les stats
-                            addKills(listEvent, event.getTuer()); //Ajout des kills
-                            if (event.getListitem().size() > 0){ //Si il y a des Items a ajouter
-                                addItems(listEvent,event.getAjouteItem(),event.getListitem());
-                            }  //Ajout des Items si il y en a à ajouter
-                            addMort(listEvent, event.getMort()); //Ajout de l'etat de mort si le joueur est mort
-
-                            //On met les joueurs dans leurs liste en fonction de leur Etat (mort ou non)
-                            ajouteAListe(listEvent);
-
-                            good = true;
-                        }
+                if (event.getNombreTributsImpliquer() <= liste.getListJoueurs().size()){ //On regarde si il reste asser de joueurs a impliquer dans l'event
+                    ListJoueur joueursImpliquer = new ListJoueur();
+                    for (int i = 0; i < event.getNombreTributsImpliquer();i++){
+                        joueursImpliquer.addJoueur(liste.getJoueur(0)); //On ajoute a la liste des joueurs impliquer le premier joueur de la liste des joueurs restants
+                        liste.removeJoueur(0); //On supprime le premier joueur de la liste des joueurs restant
                     }
 
-                }else{
-                    boolean good = false;
-                    while (!good){
-                        EventNormal event = getEventNormal(bloodBath.getListEvent()); //On recupere un Event au hasard
-                        if (event.getNombreTributsImpliquer() <= temp.size()){  //Si le nombre de tribut impliquer dans l'event est plus petit que le nombre qui reste dans la liste
+                    //Affiche la phrase
+                    System.out.println(event.traduirePhrase(joueursImpliquer));
 
-                            //Initialisation de la liste des joueurs impliquer dans l'event
-                            ListJoueur listEvent = initEventTeamN(event, temp);
+                    //Ajout les stats
+                    addKills(joueursImpliquer, event.getTuer());
+                    if (event.getListitem().size() > 0){ //Si il y a des Items a ajouter
+                        addItems(joueursImpliquer,event.getAjouteItem(),event.getListitem());
+                    }
+                    addMort(joueursImpliquer, event.getMort());
 
-                            //Affiche la phrase
-                            System.out.println(event.traduirePhrase(listEvent));
+                    //on met les joueurs dans leurs liste en fonction de leur Etat (mort ou non)
+                    for (Joueur joueur:joueursImpliquer.getListJoueurs()) {
+                        if (joueur.isMort()){
+                            listJoueursD.addJoueur(joueur);
+                        }else{
+                            listeVivant.addJoueur(joueur);
+                        }
+                    }
+                }
+            }else{
+                EventNormal event = getEventNormal(bloodBath.getListEvent()); //On recupere un Event au hasard
 
-                            //Ajout les stats
-                            if (event.getListitem().size() > 0){ //Si il y a des Items a ajouter
-                                addItems(listEvent,event.getAjouteItem(),event.getListitem());
-                            }
+                if (event.getNombreTributsImpliquer() <= liste.getListJoueurs().size()){ //On regarde si il reste asser de joueurs a impliquer dans l'event
+                    ListJoueur joueursImpliquer = new ListJoueur();
+                    for (int i = 0; i < event.getNombreTributsImpliquer();i++){
+                        joueursImpliquer.addJoueur(liste.getJoueur(0)); //On ajoute a la liste des joueurs impliquer le premier joueur de la liste des joueurs restants
+                        liste.removeJoueur(0); //On supprime le premier joueur de la liste des joueurs restant
+                    }
 
-                            //on met les joueurs dans leurs liste en fonction de leur Etat (mort ou non)
-                            ajouteAListe(listEvent);
+                    //Affiche la phrase
+                    System.out.println(event.traduirePhrase(joueursImpliquer));
 
-                            good = true;
+                    //Ajout les stats
+                    if (event.getListitem().size() > 0){ //Si il y a des Items a ajouter
+                        addItems(joueursImpliquer,event.getAjouteItem(),event.getListitem());
+                    }
+
+
+                    //on met les joueurs dans leurs liste en fonction de leur Etat (mort ou non)
+                    for (Joueur joueur:joueursImpliquer.getListJoueurs()) {
+                        if (joueur.isMort()){
+                            listJoueursD.addJoueur(joueur);
+                        }else{
+                            listeVivant.addJoueur(joueur);
                         }
                     }
                 }
             }
-
-            listJoueurs = temporaire;
-        for (int i=0; i<temporaire.getListJoueurs().size();i++) {
-            temporaire.removeJoueur(i);
         }
-
+        listJoueurs = listeVivant;
     }
 
     //Simule un jour
     public void dayEvent() {
-
-
         ListJoueur liste = listJoueurs;
 
+        ListJoueur listeVivant = new ListJoueur();
+        while (liste.size() > 0){
+            int rdm = randomNumber(0,100);
+            liste.shuffle();
+            if (rdm < probaDeathDay){
+                EventFatal event = getEventFatal(dayFatal.getListEvent()); //On recupere un Event au hasard
 
-        while (liste.size()>0){
+                if (event.getNombreTributsImpliquer() <= liste.getListJoueurs().size()){ //On regarde si il reste asser de joueurs a impliquer dans l'event
+                    ListJoueur joueursImpliquer = new ListJoueur();
+                    for (int i = 0; i < event.getNombreTributsImpliquer();i++){
+                        joueursImpliquer.addJoueur(liste.getJoueur(0)); //On ajoute a la liste des joueurs impliquer le premier joueur de la liste des joueurs restants
+                        liste.removeJoueur(0); //On supprime le premier joueur de la liste des joueurs restant
+                    }
+
+                    //Affiche la phrase
+                    System.out.println(event.traduirePhrase(joueursImpliquer));
+
+                    //Ajout les stats
+                    addKills(joueursImpliquer, event.getTuer());
+                    if (event.getListitem().size() > 0){ //Si il y a des Items a ajouter
+                        addItems(joueursImpliquer,event.getAjouteItem(),event.getListitem());
+                    }
+                    addMort(joueursImpliquer, event.getMort());
+
+                    //on met les joueurs dans leurs liste en fonction de leur Etat (mort ou non)
+                    for (Joueur joueur:joueursImpliquer.getListJoueurs()) {
+                        if (joueur.isMort()){
+                            listJoueursD.addJoueur(joueur);
+                        }else{
+                            listeVivant.addJoueur(joueur);
+                        }
+                    }
+                }
+            }else{
+                EventNormal event = getEventNormal(day.getListEvent()); //On recupere un Event au hasard
+
+                if (event.getNombreTributsImpliquer() <= liste.getListJoueurs().size()){ //On regarde si il reste asser de joueurs a impliquer dans l'event
+                    ListJoueur joueursImpliquer = new ListJoueur();
+                    for (int i = 0; i < event.getNombreTributsImpliquer();i++){
+                        joueursImpliquer.addJoueur(liste.getJoueur(0)); //On ajoute a la liste des joueurs impliquer le premier joueur de la liste des joueurs restants
+                        liste.removeJoueur(0); //On supprime le premier joueur de la liste des joueurs restant
+                    }
+
+                    //Affiche la phrase
+                    System.out.println(event.traduirePhrase(joueursImpliquer));
+
+                    //Ajout les stats
+                    if (event.getListitem().size() > 0){ //Si il y a des Items a ajouter
+                        addItems(joueursImpliquer,event.getAjouteItem(),event.getListitem());
+                    }
 
 
+                    //on met les joueurs dans leurs liste en fonction de leur Etat (mort ou non)
+                    for (Joueur joueur:joueursImpliquer.getListJoueurs()) {
+                        if (joueur.isMort()){
+                            listJoueursD.addJoueur(joueur);
+                        }else{
+                            listeVivant.addJoueur(joueur);
+                        }
+                    }
+                }
+            }
         }
+        listJoueurs = listeVivant;
     }
 
     //Simule une nuit
@@ -239,11 +300,70 @@ public class HungerGame {
 
         ListJoueur liste = listJoueurs;
 
+        ListJoueur listeVivant = new ListJoueur();
+        while (liste.size() > 0){
+            int rdm = randomNumber(0,100);
+            liste.shuffle();
+            if (rdm < probaDeathNight){
+                EventFatal event = getEventFatal(nightFatal.getListEvent()); //On recupere un Event au hasard
 
-        while (liste.size()>0){
+                if (event.getNombreTributsImpliquer() <= liste.getListJoueurs().size()){ //On regarde si il reste asser de joueurs a impliquer dans l'event
+                    ListJoueur joueursImpliquer = new ListJoueur();
+                    for (int i = 0; i < event.getNombreTributsImpliquer();i++){
+                        joueursImpliquer.addJoueur(liste.getJoueur(0)); //On ajoute a la liste des joueurs impliquer le premier joueur de la liste des joueurs restants
+                        liste.removeJoueur(0); //On supprime le premier joueur de la liste des joueurs restant
+                    }
+
+                    //Affiche la phrase
+                    System.out.println(event.traduirePhrase(joueursImpliquer));
+
+                    //Ajout les stats
+                    addKills(joueursImpliquer, event.getTuer());
+                    if (event.getListitem().size() > 0){ //Si il y a des Items a ajouter
+                        addItems(joueursImpliquer,event.getAjouteItem(),event.getListitem());
+                    }
+                    addMort(joueursImpliquer, event.getMort());
+
+                    //on met les joueurs dans leurs liste en fonction de leur Etat (mort ou non)
+                    for (Joueur joueur:joueursImpliquer.getListJoueurs()) {
+                        if (joueur.isMort()){
+                            listJoueursD.addJoueur(joueur);
+                        }else{
+                            listeVivant.addJoueur(joueur);
+                        }
+                    }
+                }
+            }else{
+                EventNormal event = getEventNormal(night.getListEvent()); //On recupere un Event au hasard
+
+                if (event.getNombreTributsImpliquer() <= liste.getListJoueurs().size()){ //On regarde si il reste asser de joueurs a impliquer dans l'event
+                    ListJoueur joueursImpliquer = new ListJoueur();
+                    for (int i = 0; i < event.getNombreTributsImpliquer();i++){
+                        joueursImpliquer.addJoueur(liste.getJoueur(0)); //On ajoute a la liste des joueurs impliquer le premier joueur de la liste des joueurs restants
+                        liste.removeJoueur(0); //On supprime le premier joueur de la liste des joueurs restant
+                    }
+
+                    //Affiche la phrase
+                    System.out.println(event.traduirePhrase(joueursImpliquer));
+
+                    //Ajout les stats
+                    if (event.getListitem().size() > 0){ //Si il y a des Items a ajouter
+                        addItems(joueursImpliquer,event.getAjouteItem(),event.getListitem());
+                    }
 
 
+                    //on met les joueurs dans leurs liste en fonction de leur Etat (mort ou non)
+                    for (Joueur joueur:joueursImpliquer.getListJoueurs()) {
+                        if (joueur.isMort()){
+                            listJoueursD.addJoueur(joueur);
+                        }else{
+                            listeVivant.addJoueur(joueur);
+                        }
+                    }
+                }
+            }
         }
+        listJoueurs = listeVivant;
     }
 
     private void addMort(ListJoueur ljoueurs, boolean[] mort) { //Ajoute l'etat de mort sur les Joueurs concerner

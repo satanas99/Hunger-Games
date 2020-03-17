@@ -76,3 +76,7 @@ A Faire : -Faire le testBloodbath
 -Ajout d'une méthode pour mélanger la liste de joueurs
 -Ajout de la variable Mort pour savoir si le joueur est mort
 -Implementation de la méthode dans HungerGame.Bloodbath (Ne fonctionne pas pour le moment)
+
+### v 0.2.0 ### 17/03/2020 ###
+-Ajout des méthodes Bloodbath, Day et Night de HungerGame pour simuler chaque étapes
+-Commencer a implementer la gestion des Items

@@ -1,5 +1,8 @@
 package Events;
 
+import HG.Item;
+import HG.ListItems;
+
 import java.util.ArrayList;
 
 public class DayFatal {
@@ -13,7 +16,9 @@ public class DayFatal {
         //Event 1
         boolean[] mort = {false,true};
         int[] tuer = {1,0};
-        addEventF(new EventFatal("[Joueur1] plante un couteau dans la tête de [Joueur2].", 2, mort , tuer));
+        ListItems listItems = new ListItems(new Item("epee"));
+        boolean[] quiAItem = {true, false};
+        addEventF(new EventFatal("[Joueur1] plante une épee dans la tête de [Joueur2].", 2, mort , tuer, listItems, quiAItem));
 
         //Event 2
         mort = new boolean[]{false,true};

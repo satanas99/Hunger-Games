@@ -4,6 +4,12 @@ public class Item {
     private Integer attaque,defence;
     private String nom;
 
+    public Item(String nom) {
+        this.nom = nom;
+        this.attaque = 0;
+        this.defence = 0;
+    }
+
     public Item(String nom, Integer attaque, Integer defence) {
         this.nom = nom;
         this.attaque = attaque;
