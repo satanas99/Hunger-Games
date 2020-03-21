@@ -21,8 +21,9 @@ public class BloodBathFatal {
         //Event 2
         mort = new boolean[]{false, true};
         tuer = new int[]{1,0};
-        ListItems listItems = new ListItems(new Item("epee"));
-        addEventF(new EventFatal("[Joueur1] prend une épée et décapite [Joueur2] avec une épée.", 2, mort , tuer));
+        ListItems listItems = new ListItems(new Item("Epée"));
+        boolean[] quiAItem = new boolean[]{true,false};
+        addEventF(new EventFatal("[Joueur1] prend une épée et décapite [Joueur2] avec une épée.", 2, mort , tuer, listItems, quiAItem));
 
         //Event 3
         mort = new boolean[]{true};

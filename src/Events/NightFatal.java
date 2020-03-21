@@ -1,5 +1,7 @@
 package Events;
 
+import HG.Item;
+
 import java.util.ArrayList;
 
 public class NightFatal {
@@ -23,7 +25,16 @@ public class NightFatal {
         //Event 3
         mort = new boolean[]{false,true};
         tuer = new int[]{1,0};
-        addEventF(new EventFatal("[Joueur1] tue [Joueur2] pendant qu'(il/elle2) dort.", 2, mort , tuer));
+        addEventF(new EventFatal("[Joueur1] tue [Joueur2] pendant qu'[il/elle2] dort.", 2, mort , tuer));
+
+
+        //Event 4
+        mort = new boolean[]{false, true, true, true};
+        tuer = new int[]{3,0,0,0};
+        boolean[] whoNeedItem = {true, false, false, false};
+        Item itemNeed = new Item("explosif");
+        addEventF(new EventFatal("[Joueur1] place un explosif est tue [Joueur2], [Joueur3] et [Joueur4]",4 , mort , tuer,itemNeed,whoNeedItem));
+
 
         /*
         //Event

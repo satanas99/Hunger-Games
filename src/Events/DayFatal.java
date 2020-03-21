@@ -16,9 +16,9 @@ public class DayFatal {
         //Event 1
         boolean[] mort = {false,true};
         int[] tuer = {1,0};
-        ListItems listItems = new ListItems(new Item("epee"));
-        boolean[] quiAItem = {true, false};
-        addEventF(new EventFatal("[Joueur1] plante une épee dans la tête de [Joueur2].", 2, mort , tuer, listItems, quiAItem));
+        boolean[] whoNeedItem = {true, false};
+        Item itemNeed = new Item("Epée");
+        addEventF(new EventFatal("[Joueur1] plante une épee dans le ventre de [Joueur2].", 2, mort , tuer, itemNeed,whoNeedItem));
 
         //Event 2
         mort = new boolean[]{false,true};
@@ -30,7 +30,12 @@ public class DayFatal {
         tuer = new int[]{0};
         addEventF(new EventFatal("Un pikachu sauvage apparait et attaque tonnere sur [Joueur1]",1 , mort , tuer));
 
-
+        //Event 4
+        mort = new boolean[]{false, true, true, true};
+        tuer = new int[]{3,0,0,0};
+        whoNeedItem = new boolean[]{true, false, false, false};
+        itemNeed = new Item("explosif");
+        addEventF(new EventFatal("[Joueur1] place un explosif est tue [Joueur2], [Joueur3] et [Joueur4]",4 , mort , tuer, itemNeed,whoNeedItem));
         /*
 
         //Event

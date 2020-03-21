@@ -174,12 +174,13 @@ public class HungerGame {
                     }
 
                     //Affiche la phrase
+                    System.out.print("==> ");
                     System.out.println(event.traduirePhrase(joueursImpliquer));
 
                     //Ajout les stats
                     addKills(joueursImpliquer, event.getTuer());
                     if (event.getListitem().size() > 0){ //Si il y a des Items a ajouter
-                        addItems(joueursImpliquer,event.getAjouteItem(),event.getListitem());
+                        addItems(joueursImpliquer,event.getQuiAItem(),event.getListitem());
                     }
                     addMort(joueursImpliquer, event.getMort());
 
@@ -203,11 +204,12 @@ public class HungerGame {
                     }
 
                     //Affiche la phrase
+                    System.out.print("==> ");
                     System.out.println(event.traduirePhrase(joueursImpliquer));
 
                     //Ajout les stats
-                    if (event.getListitem().size() > 0){ //Si il y a des Items a ajouter
-                        addItems(joueursImpliquer,event.getAjouteItem(),event.getListitem());
+                    if (event.getListitem().size() > 0){ //Si il y a des Items a ajouter et que le joueur n'a pas deja l'Item
+                        addItems(joueursImpliquer,event.getQuiAItem(),event.getListitem());
                     }
 
 
@@ -225,31 +227,64 @@ public class HungerGame {
         listJoueurs = listeVivant;
     }
 
+
     //Simule un jour
     public void dayEvent() {
         ListJoueur liste = listJoueurs;
-
+        System.out.println("Joueur total : " + (liste.getListJoueurs().size() + listJoueursD.getListJoueurs().size()));
         ListJoueur listeVivant = new ListJoueur();
         while (liste.size() > 0){
+
+            ListJoueur listbackup = liste;
             int rdm = randomNumber(0,100);
             liste.shuffle();
             if (rdm < probaDeathDay){
+                boolean peuxUseEvent = false;
+                ListJoueur joueursImpliquer = new ListJoueur();
                 EventFatal event = getEventFatal(dayFatal.getListEvent()); //On recupere un Event au hasard
+                while(!peuxUseEvent) {
+                    joueursImpliquer = new ListJoueur();
+                    liste = listbackup;
+                    event = getEventFatal(dayFatal.getListEvent()); //On recupere un Event au hasard
+                    if (event.getNombreTributsImpliquer() <= liste.getListJoueurs().size()) { //On regarde si il reste asser de joueurs a impliquer dans l'event
 
-                if (event.getNombreTributsImpliquer() <= liste.getListJoueurs().size()){ //On regarde si il reste asser de joueurs a impliquer dans l'event
-                    ListJoueur joueursImpliquer = new ListJoueur();
-                    for (int i = 0; i < event.getNombreTributsImpliquer();i++){
-                        joueursImpliquer.addJoueur(liste.getJoueur(0)); //On ajoute a la liste des joueurs impliquer le premier joueur de la liste des joueurs restants
-                        liste.removeJoueur(0); //On supprime le premier joueur de la liste des joueurs restant
+                        for (int i = 0; i < event.getNombreTributsImpliquer(); i++) {
+                            joueursImpliquer.addJoueur(liste.getJoueur(0)); //On ajoute a la liste des joueurs impliquer le premier joueur de la liste des joueurs restants
+                            liste.removeJoueur(0); //On supprime le premier joueur de la liste des joueurs restant
+                        }
+
+
+                        if (event.isRequiert()) {//Si un joueur a besoin d'un Item pour afficher la phrase
+                            int compt = 0;
+                            boolean possedeItem = false;
+                            for (Joueur joueur : joueursImpliquer.getListJoueurs()) {
+                                if (event.getWhoNeedItem()[compt]) {
+                                    for (Item item : joueur.getSac().getListItems()) {
+                                        if (item.getNom().equals(event.getItemNeed().getNom())) {
+                                            possedeItem = true;
+                                        }
+                                    }
+                                }
+                                compt += 1;
+                            }
+                            if (possedeItem) {
+                                peuxUseEvent = true;
+                            }
+                        } else {
+                            peuxUseEvent = true;
+                        }
                     }
+                }
 
                     //Affiche la phrase
+
+                    System.out.print("==> ");
                     System.out.println(event.traduirePhrase(joueursImpliquer));
 
                     //Ajout les stats
                     addKills(joueursImpliquer, event.getTuer());
                     if (event.getListitem().size() > 0){ //Si il y a des Items a ajouter
-                        addItems(joueursImpliquer,event.getAjouteItem(),event.getListitem());
+                        addItems(joueursImpliquer,event.getQuiAItem(),event.getListitem());
                     }
                     addMort(joueursImpliquer, event.getMort());
 
@@ -261,23 +296,51 @@ public class HungerGame {
                             listeVivant.addJoueur(joueur);
                         }
                     }
-                }
-            }else{
-                EventNormal event = getEventNormal(day.getListEvent()); //On recupere un Event au hasard
 
-                if (event.getNombreTributsImpliquer() <= liste.getListJoueurs().size()){ //On regarde si il reste asser de joueurs a impliquer dans l'event
-                    ListJoueur joueursImpliquer = new ListJoueur();
-                    for (int i = 0; i < event.getNombreTributsImpliquer();i++){
-                        joueursImpliquer.addJoueur(liste.getJoueur(0)); //On ajoute a la liste des joueurs impliquer le premier joueur de la liste des joueurs restants
-                        liste.removeJoueur(0); //On supprime le premier joueur de la liste des joueurs restant
+            }else{
+                boolean peuxUseEvent = false;
+                ListJoueur joueursImpliquer = new ListJoueur();
+                EventNormal event = getEventNormal(day.getListEvent()); //On recupere un Event au hasard
+                while(!peuxUseEvent) {
+                    joueursImpliquer = new ListJoueur();
+                    liste = listbackup;
+                    event = getEventNormal(day.getListEvent()); //On recupere un Event au hasard
+                    if (event.getNombreTributsImpliquer() <= liste.getListJoueurs().size()) { //On regarde si il reste asser de joueurs a impliquer dans l'event
+
+                        for (int i = 0; i < event.getNombreTributsImpliquer(); i++) {
+                            joueursImpliquer.addJoueur(liste.getJoueur(0)); //On ajoute a la liste des joueurs impliquer le premier joueur de la liste des joueurs restants
+                            liste.removeJoueur(0); //On supprime le premier joueur de la liste des joueurs restant
+                        }
+                        if (event.isRequiert()) {//Si un joueur a besoin d'un Item pour afficher la phrase
+                            int compt = 0;
+                            boolean possedeItem = false;
+                            for (Joueur joueur : joueursImpliquer.getListJoueurs()) {
+                                if (event.getWhoNeedItem()[compt]) {
+                                    for (Item item : joueur.getSac().getListItems()) {
+                                        if (item.getNom().equals(event.getItemNeed().getNom())) {
+                                            possedeItem = true;
+                                            break;
+                                        }
+                                    }
+                                }
+                                compt += 1;
+                            }
+                            if (possedeItem) {
+                                peuxUseEvent = true;
+                            }
+                        } else {
+                            peuxUseEvent = true;
+                        }
                     }
+                }
 
                     //Affiche la phrase
+                    System.out.print("==> ");
                     System.out.println(event.traduirePhrase(joueursImpliquer));
 
                     //Ajout les stats
                     if (event.getListitem().size() > 0){ //Si il y a des Items a ajouter
-                        addItems(joueursImpliquer,event.getAjouteItem(),event.getListitem());
+                        addItems(joueursImpliquer,event.getQuiAItem(),event.getListitem());
                     }
 
 
@@ -291,9 +354,9 @@ public class HungerGame {
                     }
                 }
             }
-        }
         listJoueurs = listeVivant;
-    }
+        }
+
 
     //Simule une nuit
     public void nightEvent() {
@@ -302,25 +365,55 @@ public class HungerGame {
 
         ListJoueur listeVivant = new ListJoueur();
         while (liste.size() > 0){
+            ListJoueur listbackup = liste;
             int rdm = randomNumber(0,100);
             liste.shuffle();
             if (rdm < probaDeathNight){
+                boolean peuxUseEvent = false;
+                ListJoueur joueursImpliquer = new ListJoueur();
                 EventFatal event = getEventFatal(nightFatal.getListEvent()); //On recupere un Event au hasard
+                while(!peuxUseEvent) {
+                    joueursImpliquer = new ListJoueur();
+                    liste = listbackup;
+                    event = getEventFatal(nightFatal.getListEvent()); //On recupere un Event au hasard
+                    if (event.getNombreTributsImpliquer() <= liste.getListJoueurs().size()) { //On regarde si il reste asser de joueurs a impliquer dans l'event
 
-                if (event.getNombreTributsImpliquer() <= liste.getListJoueurs().size()){ //On regarde si il reste asser de joueurs a impliquer dans l'event
-                    ListJoueur joueursImpliquer = new ListJoueur();
-                    for (int i = 0; i < event.getNombreTributsImpliquer();i++){
-                        joueursImpliquer.addJoueur(liste.getJoueur(0)); //On ajoute a la liste des joueurs impliquer le premier joueur de la liste des joueurs restants
-                        liste.removeJoueur(0); //On supprime le premier joueur de la liste des joueurs restant
+                        for (int i = 0; i < event.getNombreTributsImpliquer(); i++) {
+                            joueursImpliquer.addJoueur(liste.getJoueur(0)); //On ajoute a la liste des joueurs impliquer le premier joueur de la liste des joueurs restants
+                            liste.removeJoueur(0); //On supprime le premier joueur de la liste des joueurs restant
+                        }
+
+                        if (event.isRequiert()) {//Si un joueur a besoin d'un Item pour afficher la phrase
+                            int compt = 0;
+                            boolean possedeItem = false;
+                            for (Joueur joueur : joueursImpliquer.getListJoueurs()) {
+                                if (event.getWhoNeedItem()[compt]) {
+                                    for (Item item : joueur.getSac().getListItems()) {
+                                        if (item.getNom().equals(event.getItemNeed().getNom())) {
+                                            possedeItem = true;
+                                            break;
+                                        }
+                                    }
+                                }
+                                compt += 1;
+                            }
+                            if (possedeItem) {
+                                peuxUseEvent = true;
+                            }
+                        } else {
+                            peuxUseEvent = true;
+                        }
                     }
+                }
 
                     //Affiche la phrase
+                    System.out.print("==> ");
                     System.out.println(event.traduirePhrase(joueursImpliquer));
 
                     //Ajout les stats
                     addKills(joueursImpliquer, event.getTuer());
                     if (event.getListitem().size() > 0){ //Si il y a des Items a ajouter
-                        addItems(joueursImpliquer,event.getAjouteItem(),event.getListitem());
+                        addItems(joueursImpliquer,event.getQuiAItem(),event.getListitem());
                     }
                     addMort(joueursImpliquer, event.getMort());
 
@@ -332,23 +425,51 @@ public class HungerGame {
                             listeVivant.addJoueur(joueur);
                         }
                     }
-                }
-            }else{
-                EventNormal event = getEventNormal(night.getListEvent()); //On recupere un Event au hasard
 
-                if (event.getNombreTributsImpliquer() <= liste.getListJoueurs().size()){ //On regarde si il reste asser de joueurs a impliquer dans l'event
-                    ListJoueur joueursImpliquer = new ListJoueur();
-                    for (int i = 0; i < event.getNombreTributsImpliquer();i++){
-                        joueursImpliquer.addJoueur(liste.getJoueur(0)); //On ajoute a la liste des joueurs impliquer le premier joueur de la liste des joueurs restants
-                        liste.removeJoueur(0); //On supprime le premier joueur de la liste des joueurs restant
+            }else{
+                boolean peuxUseEvent = false;
+                ListJoueur joueursImpliquer = new ListJoueur();
+                EventNormal event = getEventNormal(night.getListEvent()); //On recupere un Event au hasard
+                while(!peuxUseEvent) {
+                    joueursImpliquer = new ListJoueur();
+                    liste = listbackup;
+                    event = getEventNormal(night.getListEvent()); //On recupere un Event au hasard
+                    if (event.getNombreTributsImpliquer() <= liste.getListJoueurs().size()) { //On regarde si il reste asser de joueurs a impliquer dans l'event
+
+                        for (int i = 0; i < event.getNombreTributsImpliquer(); i++) {
+                            joueursImpliquer.addJoueur(liste.getJoueur(0)); //On ajoute a la liste des joueurs impliquer le premier joueur de la liste des joueurs restants
+                            liste.removeJoueur(0); //On supprime le premier joueur de la liste des joueurs restant
+                        }
+                        if (event.isRequiert()) {//Si un joueur a besoin d'un Item pour afficher la phrase
+                            int compt = 0;
+                            boolean possedeItem = false;
+                            for (Joueur joueur : joueursImpliquer.getListJoueurs()) {
+                                if (event.getWhoNeedItem()[compt]) {
+                                    for (Item item : joueur.getSac().getListItems()) {
+                                        if (item.getNom().equals(event.getItemNeed().getNom())) {
+                                            possedeItem = true;
+                                            break;
+                                        }
+                                    }
+                                }
+                                compt += 1;
+                            }
+                            if (possedeItem) {
+                                peuxUseEvent = true;
+                            }
+                        } else {
+                            peuxUseEvent = true;
+                        }
                     }
+                }
 
                     //Affiche la phrase
+                    System.out.print("==> ");
                     System.out.println(event.traduirePhrase(joueursImpliquer));
 
                     //Ajout les stats
                     if (event.getListitem().size() > 0){ //Si il y a des Items a ajouter
-                        addItems(joueursImpliquer,event.getAjouteItem(),event.getListitem());
+                        addItems(joueursImpliquer,event.getQuiAItem(),event.getListitem());
                     }
 
 
@@ -362,7 +483,6 @@ public class HungerGame {
                     }
                 }
             }
-        }
         listJoueurs = listeVivant;
     }
 
@@ -375,11 +495,22 @@ public class HungerGame {
             compt+=1;
         }
     }
-    public void addItems(ListJoueur ljoueurs, boolean[] item, ListItems list){
+
+    public void addItems(ListJoueur ljoueurs, boolean[] quiAItem, ListItems list){
         int compt = 0;
+        boolean estDansSac = false;
         for (Joueur joueur:ljoueurs.getListJoueurs()){
-            if (item[compt]){
-                joueur.ajouteItems(list);
+            if (quiAItem[compt]){ //On regarde si le joueur peux avoir l'item
+                for (Item item:list.getListItems()) { //On prend chaque item que l'on veux add
+                    for (Item itemJoueur:joueur.getSac().getListItems()) { //On prend chaque items du joueur et on test si il possède deja l'item que l'on veux add
+                        if (itemJoueur.getNom().equals(item.getNom())){
+                            estDansSac = true;
+                        }
+                    }
+                    if (!estDansSac){
+                        joueur.ajouteItem(item);
+                    }
+                }
             }
             compt+=1;
         }

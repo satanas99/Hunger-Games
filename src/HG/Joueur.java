@@ -94,39 +94,13 @@ public class Joueur {
     //Fonctions
     public void ajouteItem(Item item){
         sac.addItem(item);
-        addStats(item);
-    }
-
-    private void addStats(Item item) {
-        if (item.getAttaque() > 0){
-            attaque += item.getAttaque();
-        }
-        if (item.getDefence() > 0){
-            defence += item.getDefence();
-        }
     }
     public void addDistrict(Integer district){
         this.district = district;
     }
-    public void supprimeItem(){
-        int x = randomNumber(0,sac.size());
-        Item item = (Item) sac.get(x);
-        sac.remove(x);
-        removeStats(item);
-    }
-    private void removeStats(Item item) {
-        if (item.getAttaque() > 0){
-            attaque -= item.getAttaque();
-        }
-        if (item.getDefence() > 0){
-            defence -= item.getDefence();
-        }
-    }
     public void ajouteKill(int kills){//Ajoute au joueur le nombre de kills en paramètres
         this.kills += kills;
     }
-
-
     public void ajouteItems(ListItems listItems) {//Ajoute plusieurs Item au sac
         for (Item item: listItems.getListItems()) {
             sac.addItem(item);

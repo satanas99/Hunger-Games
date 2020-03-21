@@ -10,11 +10,12 @@ Partie custom pour essayer : http://brantsteele.net/hungergames/r.php?c=FMuMPYaE
 public class MainActivity {
     public static void main(String[] args) {
         HungerGame hg = new HungerGame();
+        int tour = 0;
         int jour = 0;
-
+        int nuit = 0;
         while (hg.getListJoueurs().size() > 1){
-            System.out.println("============================================================\nJour : "+ jour);
-            if(jour==0){
+            if(tour==0){
+                System.out.println("============================================================\nBloodBath");
                 hg.bloodBathEvent();
             }else {
 
@@ -25,20 +26,28 @@ public class MainActivity {
                     hg.feast ou hg.arena (voir site)
                   }*/
 
-                if (jour%2 == 1) {
+                if (tour%2 == 1) {
+                    jour+=1;
+                    System.out.println("============================================================\nJour : "+ jour);
                     hg.dayEvent();
                 }else {
+                    nuit+=1;
+                    System.out.println("============================================================\nNuit : "+ nuit);
                     hg.nightEvent();
                 }
             }
-            jour+=1;
+            tour+=1;
         }
 
         System.out.println("\nClassement");
         hg.getListJoueursD().afficheJoueurs();
+        hg.getListJoueursD().afficheItems();
 
         System.out.println("\nGagnant : ");
         hg.getListJoueurs().afficheJoueurs();
+        hg.getListJoueurs().afficheItems();
+
+        System.out.println("Joueurs total : " + (hg.getListJoueursD().size()+hg.getListJoueurs().size()) + "/48");
 
 
         //        System.out.println();

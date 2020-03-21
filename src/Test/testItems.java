@@ -16,14 +16,14 @@ public class testItems {
             int[] tuer = {1,0};
 
             ListItems list = new ListItems();
-            list.addItem(new Item("Epée", 5,5));
+            list.addItem(new Item("Epée"));
 
             boolean[] item = {true, false};
             EventFatal event = new EventFatal("[Joueur1] trouve une épée et décapite [Joueur2].", 2, mort , tuer, list,item);
 
             String phrase = event.traduirePhrase(ljoueurs);
             addKills(ljoueurs, tuer);
-            addItems(ljoueurs, event.getAjouteItem(), event.getListitem());
+            addItems(ljoueurs, event.getQuiAItem(), event.getListitem());
             addMort(ljoueurs,event.getMort());
             System.out.println(event.getPhrase());
 

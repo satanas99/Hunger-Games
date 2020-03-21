@@ -1,5 +1,6 @@
 package Events;
 
+import HG.Item;
 import HG.ListItems;
 import HG.ListJoueur;
 
@@ -17,7 +18,9 @@ public class EventFatal {
     private ListItems listitem; //Liste des items qui peuvent être ajouter
     private boolean[] quiAItem; //Pour determiner a qui appartient l'item pour savoir si on affiche la phrase
 
-
+    private boolean requiert = false; //permet de savoir si il y a besoin d'un item
+    private Item itemNeed; //Item qui est demander sur certaines phrases
+    private boolean[] whoNeedItem; //Pour determiner qui a besoin de l'item pour afficher la phrase
 
     //Constructeur
     public EventFatal(String phrase, int nombreTributImpliquer, boolean[] mort, int[] tuer){
@@ -27,6 +30,8 @@ public class EventFatal {
         this.tuer = tuer;
         this.listitem =new ListItems();
         this.quiAItem = new boolean[0];
+        this.itemNeed = new Item("void");
+        this.whoNeedItem = new boolean[0];
     }
 
     public EventFatal(String phrase, int nombreTributImpliquer, boolean[] mort, int[] tuer, ListItems listitem, boolean[] quiAItem){
@@ -36,11 +41,50 @@ public class EventFatal {
         this.tuer = tuer;
         this.listitem =listitem;
         this.quiAItem = quiAItem;
+        this.itemNeed = new Item("void");
+        this.whoNeedItem = new boolean[0];
+    }
+
+    public EventFatal(String phrase, int nombreTributImpliquer, boolean[] mort, int[] tuer, ListItems listitem, boolean[] quiAItem, Item itemNeed, boolean[] whoNeedItem){
+        this.phrase = phrase;
+        this.nombreTributsImpliquer = nombreTributImpliquer;
+        this.mort = mort;
+        this.tuer = tuer;
+        this.listitem =listitem;
+        this.quiAItem = quiAItem;
+        this.itemNeed = itemNeed;
+        this.whoNeedItem = whoNeedItem;
+        this.requiert = true;
+    }
+
+    public EventFatal(String phrase, int nombreTributImpliquer, boolean[] mort, int[] tuer, Item itemNeed, boolean[] whoNeedItem){
+        this.phrase = phrase;
+        this.nombreTributsImpliquer = nombreTributImpliquer;
+        this.mort = mort;
+        this.tuer = tuer;
+        this.listitem =new ListItems();
+        this.itemNeed = itemNeed;
+        this.whoNeedItem = whoNeedItem;
+        this.requiert = true;
     }
 
 
 
     //Getters / Setters
+
+
+    public Item getItemNeed() {
+        return itemNeed;
+    }
+    public boolean[] getWhoNeedItem() {
+        return whoNeedItem;
+    }
+    public boolean isRequiert() {
+        return requiert;
+    }
+    public boolean[] getQuiAItem() {
+        return quiAItem;
+    }
     public boolean[] getMort() {
         return mort;
     }
@@ -55,9 +99,6 @@ public class EventFatal {
     }
     public ListItems getListitem() {
         return listitem;
-    }
-    public boolean[] getAjouteItem() {
-        return quiAItem;
     }
 
     //Méthodes

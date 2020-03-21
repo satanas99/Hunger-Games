@@ -45,7 +45,7 @@ public class TestBloodbath {
                         //Ajout les stats
                         addKills(listEvent, event.getTuer());
                         if (event.getListitem().size() > 0){ //Si il y a des Items a ajouter
-                            addItems(listEvent,event.getAjouteItem(),event.getListitem());
+                            addItems(listEvent,event.getQuiAItem(),event.getListitem());
                         }
                         addMort(listEvent, event.getMort());
 
@@ -79,7 +79,7 @@ public class TestBloodbath {
 
                         //Ajout les stats
                         if (event.getListitem().size() > 0){ //Si il y a des Items a ajouter
-                            addItems(listEvent,event.getAjouteItem(),event.getListitem());
+                            addItems(listEvent,event.getQuiAItem(),event.getListitem());
                         }
 
 

@@ -80,3 +80,7 @@ A Faire : -Faire le testBloodbath
 ### v 0.2.0 ### 17/03/2020 ###
 -Ajout des méthodes Bloodbath, Day et Night de HungerGame pour simuler chaque étapes
 -Commencer a implementer la gestion des Items
+
+### v 0.2.1 ### 21/03/2020 ###
+-Terminer la gestion des Items
+-Il reste un bug dans quand joueursImpliquer est initialisé, des joueurs sont perdu
