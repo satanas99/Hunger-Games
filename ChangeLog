@@ -84,3 +84,7 @@ A Faire : -Faire le testBloodbath
 ### v 0.2.1 ### 21/03/2020 ###
 -Terminer la gestion des Items
 -Il reste un bug dans quand joueursImpliquer est initialisé, des joueurs sont perdu
+
+### v 1.0.0 ### 23/03/2020
+-Bug fix
+-Jeu fonctionnel

@@ -231,23 +231,20 @@ public class HungerGame {
     //Simule un jour
     public void dayEvent() {
         ListJoueur liste = listJoueurs;
-        System.out.println("Joueur total : " + (liste.getListJoueurs().size() + listJoueursD.getListJoueurs().size()));
         ListJoueur listeVivant = new ListJoueur();
         while (liste.size() > 0){
-
-            ListJoueur listbackup = liste;
             int rdm = randomNumber(0,100);
             liste.shuffle();
+            ListJoueur listbackup = setBackupList(liste);
             if (rdm < probaDeathDay){
                 boolean peuxUseEvent = false;
                 ListJoueur joueursImpliquer = new ListJoueur();
                 EventFatal event = getEventFatal(dayFatal.getListEvent()); //On recupere un Event au hasard
                 while(!peuxUseEvent) {
                     joueursImpliquer = new ListJoueur();
-                    liste = listbackup;
+                    liste = setBackupList(listbackup);
                     event = getEventFatal(dayFatal.getListEvent()); //On recupere un Event au hasard
                     if (event.getNombreTributsImpliquer() <= liste.getListJoueurs().size()) { //On regarde si il reste asser de joueurs a impliquer dans l'event
-
                         for (int i = 0; i < event.getNombreTributsImpliquer(); i++) {
                             joueursImpliquer.addJoueur(liste.getJoueur(0)); //On ajoute a la liste des joueurs impliquer le premier joueur de la liste des joueurs restants
                             liste.removeJoueur(0); //On supprime le premier joueur de la liste des joueurs restant
@@ -276,6 +273,7 @@ public class HungerGame {
                     }
                 }
 
+
                     //Affiche la phrase
 
                     System.out.print("==> ");
@@ -303,7 +301,7 @@ public class HungerGame {
                 EventNormal event = getEventNormal(day.getListEvent()); //On recupere un Event au hasard
                 while(!peuxUseEvent) {
                     joueursImpliquer = new ListJoueur();
-                    liste = listbackup;
+                    liste = setBackupList(listbackup);
                     event = getEventNormal(day.getListEvent()); //On recupere un Event au hasard
                     if (event.getNombreTributsImpliquer() <= liste.getListJoueurs().size()) { //On regarde si il reste asser de joueurs a impliquer dans l'event
 
@@ -343,7 +341,6 @@ public class HungerGame {
                         addItems(joueursImpliquer,event.getQuiAItem(),event.getListitem());
                     }
 
-
                     //on met les joueurs dans leurs liste en fonction de leur Etat (mort ou non)
                     for (Joueur joueur:joueursImpliquer.getListJoueurs()) {
                         if (joueur.isMort()){
@@ -362,19 +359,19 @@ public class HungerGame {
     public void nightEvent() {
 
         ListJoueur liste = listJoueurs;
-
         ListJoueur listeVivant = new ListJoueur();
+
         while (liste.size() > 0){
-            ListJoueur listbackup = liste;
             int rdm = randomNumber(0,100);
             liste.shuffle();
+            ListJoueur listbackup = setBackupList(liste);
             if (rdm < probaDeathNight){
                 boolean peuxUseEvent = false;
                 ListJoueur joueursImpliquer = new ListJoueur();
                 EventFatal event = getEventFatal(nightFatal.getListEvent()); //On recupere un Event au hasard
                 while(!peuxUseEvent) {
                     joueursImpliquer = new ListJoueur();
-                    liste = listbackup;
+                    liste = setBackupList(listbackup);
                     event = getEventFatal(nightFatal.getListEvent()); //On recupere un Event au hasard
                     if (event.getNombreTributsImpliquer() <= liste.getListJoueurs().size()) { //On regarde si il reste asser de joueurs a impliquer dans l'event
 
@@ -432,7 +429,7 @@ public class HungerGame {
                 EventNormal event = getEventNormal(night.getListEvent()); //On recupere un Event au hasard
                 while(!peuxUseEvent) {
                     joueursImpliquer = new ListJoueur();
-                    liste = listbackup;
+                    liste = setBackupList(listbackup);
                     event = getEventNormal(night.getListEvent()); //On recupere un Event au hasard
                     if (event.getNombreTributsImpliquer() <= liste.getListJoueurs().size()) { //On regarde si il reste asser de joueurs a impliquer dans l'event
 
@@ -503,8 +500,9 @@ public class HungerGame {
             if (quiAItem[compt]){ //On regarde si le joueur peux avoir l'item
                 for (Item item:list.getListItems()) { //On prend chaque item que l'on veux add
                     for (Item itemJoueur:joueur.getSac().getListItems()) { //On prend chaque items du joueur et on test si il possède deja l'item que l'on veux add
-                        if (itemJoueur.getNom().equals(item.getNom())){
+                        if (itemJoueur.getNom().equals(item.getNom())) {
                             estDansSac = true;
+                            break;
                         }
                     }
                     if (!estDansSac){
@@ -515,6 +513,15 @@ public class HungerGame {
             compt+=1;
         }
     }
+    public ListJoueur setBackupList(ListJoueur liste) {
+        ListJoueur listeBackup = new ListJoueur();
+        for (Joueur joueur: liste.getListJoueurs()) {
+            listeBackup.addJoueur(joueur);
+        }
+        return listeBackup ;
+    }
+
+
     public void addKills(ListJoueur ljoueurs,int[] tuer){
         int compt = 0;
         for (int kill:tuer){
@@ -522,22 +529,8 @@ public class HungerGame {
             compt+=1;
         }
     }
-    public ListJoueur initEventTeamF(EventFatal event, ListJoueur temp){
-        ListJoueur listEvent = new ListJoueur();
-        for (int i = 0; i < event.getNombreTributsImpliquer();i++){
-            listEvent.addJoueur(temp.getJoueur(0));
-            temp.removeJoueur(0);
-        }
-        return listEvent;
-    }
-    public ListJoueur initEventTeamN(EventNormal event, ListJoueur temp){
-        ListJoueur listEvent = new ListJoueur();
-        for (int i = 0; i < event.getNombreTributsImpliquer();i++){
-            listEvent.addJoueur(temp.getJoueur(0));
-            temp.removeJoueur(0);
-        }
-        return listEvent;
-    }
+
+
     public void ajouteAListe(ListJoueur listEvent){
         for (Joueur joueur:listEvent.getListJoueurs()) {
             if (joueur.isMort()){

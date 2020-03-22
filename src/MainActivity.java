@@ -29,10 +29,12 @@ public class MainActivity {
                 if (tour%2 == 1) {
                     jour+=1;
                     System.out.println("============================================================\nJour : "+ jour);
+                    System.out.println("Joueurs total : " + (hg.getListJoueursD().size()+hg.getListJoueurs().size()) + "/48");
                     hg.dayEvent();
                 }else {
                     nuit+=1;
                     System.out.println("============================================================\nNuit : "+ nuit);
+                    System.out.println("Joueurs total : " + (hg.getListJoueursD().size()+hg.getListJoueurs().size()) + "/48");
                     hg.nightEvent();
                 }
             }
